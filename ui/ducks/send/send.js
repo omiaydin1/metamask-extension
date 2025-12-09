@@ -72,7 +72,6 @@ import {
   getTokenStandardAndDetails,
   showModal,
   addTransactionAndRouteToConfirmationPage,
-  updateTransactionSendFlowHistory,
   getCurrentNetworkEIP1559Compatibility,
   getLayer1GasFee,
   gasFeeStopPollingByPollingToken,
@@ -2847,13 +2846,6 @@ export function signTransaction(navigate) {
         ),
       );
       await dispatch(
-        updateTransactionSendFlowHistory(
-          draftTransaction.id,
-          unapprovedTx.sendFlowHistory?.length || 0,
-          draftTransaction.history,
-        ),
-      );
-      await dispatch(
         updateEditableParams(draftTransaction.id, editingTx.txParams),
       );
       await dispatch(
@@ -2978,7 +2970,6 @@ export function signTransaction(navigate) {
           {
             networkClientId: globalNetworkClientId,
             requireApproval: false,
-            sendFlowHistory: draftTransaction.history,
             type: TransactionType.swapAndSend,
             swaps: {
               hasApproveTx: Boolean(bestQuote?.approvalNeeded),
@@ -2995,7 +2986,6 @@ export function signTransaction(navigate) {
         const { id: basicSendTxId } = await dispatch(
           addTransactionAndRouteToConfirmationPage(txParams, {
             networkClientId: globalNetworkClientId,
-            sendFlowHistory: draftTransaction.history,
             type: transactionType,
           }),
         );
