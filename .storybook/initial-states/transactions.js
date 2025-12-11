@@ -29,6 +29,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
     chainId: '0x5',
     loadingDefaults: false,
     dappSuggestedGasFees: null,
+    sendFlowHistory: [],
     txParams: {
       from: '0xabce7847fd3661a9b7c86aaf1daea08d9da5750e',
       to: '0xefge7847fd3661a9b7c86aaf1daea08d9da5750e',
@@ -53,7 +54,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
         chainId: '0x5',
         loadingDefaults: false,
         dappSuggestedGasFees: null,
-
+        sendFlowHistory: [],
         txParams: {
           from: '0xabce7847fd3661a9b7c86aaf1daea08d9da5750e',
           to: '0xefge7847fd3661a9b7c86aaf1daea08d9da5750e',
@@ -157,6 +158,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
     loadingDefaults: true,
     origin: 'https://remix.ethereum.org',
     originalGasEstimate: '0x118f4',
+    sendFlowHistory: [],
     status: 'unapproved',
     time: 1653417884003,
     txParams: {
@@ -286,6 +288,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
     userEditedGasLimit: false,
     loadingDefaults: false,
     dappSuggestedGasFees: null,
+    sendFlowHistory: [],
     txParams: {
       from: '0xabc539a7d5c43940af498008a7c8f3abb35c3725',
       nonce: '0x7',
@@ -313,7 +316,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
         chainId: '0x5',
         loadingDefaults: false,
         dappSuggestedGasFees: null,
-
+        sendFlowHistory: [],
         txParams: {
           from: '0xabc539a7d5c43940af498008a7c8f3abb35c3725',
           nonce: '0x7',
@@ -544,6 +547,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
       gasPrice: '0x4a817c800',
       gas: '0xb427',
     },
+    sendFlowHistory: [],
     txParams: {
       from: '0xabc539a7d5c43940af498008a7c8f3abb35c3725',
       to: '0xefg60bbf4ba1de43f3b4983a539feebfbd5fd976',
@@ -569,7 +573,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
           gasPrice: '0x4a817c800',
           gas: '0xb427',
         },
-
+        sendFlowHistory: [],
         txParams: {
           from: '0xabc539a7d5c43940af498008a7c8f3abb35c3725',
           to: '0xefg60bbf4ba1de43f3b4983a539feebfbd5fd976',
@@ -743,6 +747,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
       maxPriorityFeePerGas: '0x3B9ACA00',
       maxFeePerGas: '0x7be830aec',
     },
+    sendFlowHistory: [],
     txParams: {
       from: '0xabc627172af48bd5b0765d3449a7def80d6576ff',
       to: '0xefge760f2e916647fd766b4ad9e85ff943ce3a2b',
@@ -841,6 +846,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
       gasPrice: '0x4a817c800',
       gas: '0xea60',
     },
+    sendFlowHistory: [],
     txParams: {
       from: '0xabc539a7d5c43940af498008a7c8f3abb35c3725',
       to: '0xefg60bbf4ba1de43f3b4983a539feebfbd5fd976',
@@ -866,7 +872,7 @@ export const MOCK_TRANSACTION_BY_TYPE = {
           gasPrice: '0x4a817c800',
           gas: '0xea60',
         },
-
+        sendFlowHistory: [],
         txParams: {
           from: '0xabc539a7d5c43940af498008a7c8f3abb35c3725',
           to: '0xefg60bbf4ba1de43f3b4983a539feebfbd5fd976',
@@ -1185,6 +1191,31 @@ export const MOCK_TRANSACTION_BY_TYPE = {
     userEditedGasLimit: false,
     loadingDefaults: false,
     dappSuggestedGasFees: null,
+    sendFlowHistory: [
+      {
+        entry: 'sendFlow - user set asset type to NFT',
+        timestamp: 1653457317999,
+      },
+      {
+        entry: 'sendFlow - user set asset symbol to undefined',
+        timestamp: 1653457318000,
+      },
+      {
+        entry:
+          'sendFlow - user set asset address to 0xf5de760f2e916647fd766B4AD9E85ff943cE3A2b',
+        timestamp: 1653457318000,
+      },
+      {
+        entry:
+          'sendFlow - user selected transfer to my accounts on recipient screen',
+        timestamp: 1653457319474,
+      },
+      {
+        entry:
+          'sendFlow - User clicked recipient from my accounts. address: 0xe56e7847fd3661a9b7c86aaf1daea08d9da5750e, nickname Account 1',
+        timestamp: 1653457320321,
+      },
+    ],
     txParams: {
       from: '0xabc539a7d5c43940af498008a7c8f3abb35c3725',
       to: '0xefge760f2e916647fd766b4ad9e85ff943ce3a2b',
@@ -1208,6 +1239,31 @@ export const MOCK_TRANSACTION_BY_TYPE = {
         userEditedGasLimit: false,
         loadingDefaults: true,
         dappSuggestedGasFees: null,
+        sendFlowHistory: [
+          {
+            entry: 'sendFlow - user set asset type to NFT',
+            timestamp: 1653457317999,
+          },
+          {
+            entry: 'sendFlow - user set asset symbol to undefined',
+            timestamp: 1653457318000,
+          },
+          {
+            entry:
+              'sendFlow - user set asset address to 0xf5de760f2e916647fd766B4AD9E85ff943cE3A2b',
+            timestamp: 1653457318000,
+          },
+          {
+            entry:
+              'sendFlow - user selected transfer to my accounts on recipient screen',
+            timestamp: 1653457319474,
+          },
+          {
+            entry:
+              'sendFlow - User clicked recipient from my accounts. address: 0xe56e7847fd3661a9b7c86aaf1daea08d9da5750e, nickname Account 1',
+            timestamp: 1653457320321,
+          },
+        ],
         txParams: {
           from: '0xabc539a7d5c43940af498008a7c8f3abb35c3725',
           to: '0xefge760f2e916647fd766b4ad9e85ff943ce3a2b',

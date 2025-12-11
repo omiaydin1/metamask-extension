@@ -37,6 +37,8 @@ export const getUnapprovedTransaction = (
       estimateType: 'medium',
     },
     userFeeLevel: 'medium',
+    sendFlowHistory: [],
+    history: [],
     simulationData: {
       tokenBalanceChanges: [
         {

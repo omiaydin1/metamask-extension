@@ -253,6 +253,7 @@ const Args = {
         estimateType: 'medium',
       },
       userFeeLevel: 'medium',
+      sendFlowHistory: [],
       history: [
         {
           actionId: 1730925150740.3386,
@@ -282,6 +283,7 @@ const Args = {
             estimateType: 'medium',
           },
           userFeeLevel: 'medium',
+          sendFlowHistory: [],
         },
         [
           {
@@ -627,6 +629,7 @@ const Args = {
         estimateType: 'medium',
       },
       userFeeLevel: 'medium',
+      sendFlowHistory: [],
       history: [
         {
           actionId: 1730925261366.3533,
@@ -656,6 +659,7 @@ const Args = {
             estimateType: 'medium',
           },
           userFeeLevel: 'medium',
+          sendFlowHistory: [],
         },
         [
           {
@@ -1579,6 +1583,7 @@ const Args = {
         estimateType: 'medium',
       },
       userFeeLevel: 'medium',
+      sendFlowHistory: [],
       history: [
         {
           actionId: 1730926316049.0693,
@@ -1608,6 +1613,7 @@ const Args = {
             estimateType: 'medium',
           },
           userFeeLevel: 'medium',
+          sendFlowHistory: [],
         },
         [
           {

@@ -157,6 +157,7 @@ export const createSwapsMockStore = () => {
           chainId: CHAIN_IDS.MAINNET,
           loadingDefaults: false,
           dappSuggestedGasFees: null,
+          sendFlowHistory: null,
           txParams: {
             from: '0x806627172af48bd5b0765d3449a7def80d6576ff',
             to: '0x881d40237659c251811cec9c364ef91dc08d300c',

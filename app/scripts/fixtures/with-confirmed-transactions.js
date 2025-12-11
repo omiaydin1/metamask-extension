@@ -42,6 +42,7 @@ export const withConfirmedTransactions = (from, numEntries) => {
           to: '0x2f318c334780961fb129d2a6c30d0763d9a5c970',
           value: '0x29a2241af62c0000',
         },
+        history: [],
         type: 'simpleSend',
       };
 

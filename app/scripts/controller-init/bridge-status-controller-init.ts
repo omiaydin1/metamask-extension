@@ -35,8 +35,8 @@ export const BridgeStatusControllerInit: ControllerInitFunction<
       transactionController.addTransactionBatch(...args),
     estimateGasFeeFn: (...args) =>
       transactionController.estimateGasFee(...args),
-    updateTransactionFn: (transactionMeta) =>
-      transactionController.updateTransaction(transactionMeta),
+    updateTransactionFn: (...args) =>
+      transactionController.updateTransaction(...args),
 
     config: {
       customBridgeApiBaseUrl: BRIDGE_API_BASE_URL,

@@ -1,6 +1,6 @@
 import {
   TransactionStatus,
-  TransactionType,
+  // TransactionType,
 } from '@metamask/transaction-controller';
 import { GAS_LIMITS } from '../../../../shared/constants/gas';
 import {

@@ -2970,6 +2970,7 @@ export function signTransaction(navigate) {
           {
             networkClientId: globalNetworkClientId,
             requireApproval: false,
+            sendFlowHistory: draftTransaction.history,
             type: TransactionType.swapAndSend,
             swaps: {
               hasApproveTx: Boolean(bestQuote?.approvalNeeded),
@@ -2986,6 +2987,7 @@ export function signTransaction(navigate) {
         const { id: basicSendTxId } = await dispatch(
           addTransactionAndRouteToConfirmationPage(txParams, {
             networkClientId: globalNetworkClientId,
+            sendFlowHistory: draftTransaction.history,
             type: transactionType,
           }),
         );

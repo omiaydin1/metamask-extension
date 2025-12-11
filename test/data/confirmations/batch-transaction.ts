@@ -63,6 +63,8 @@ export const upgradeAccountConfirmation = {
     estimateType: 'medium',
   },
   userFeeLevel: 'medium',
+  sendFlowHistory: [],
+  history: [],
   gasFeeEstimates: {
     type: 'fee-market',
     low: { maxFeePerGas: '0x188ee0ee4', maxPriorityFeePerGas: '0x3b9aca00' },
@@ -115,6 +117,8 @@ export const downgradeAccountConfirmation = {
     estimateType: 'medium',
   },
   userFeeLevel: 'medium',
+  sendFlowHistory: [],
+  history: [],
   gasFeeEstimates: {
     type: 'fee-market',
     low: { maxFeePerGas: '0x9374a3b7', maxPriorityFeePerGas: '0x3b9aca00' },
@@ -158,6 +162,8 @@ export const upgradeAccountConfirmationOnly = {
     estimateType: 'medium',
   },
   userFeeLevel: 'medium',
+  sendFlowHistory: [],
+  history: [],
   gasFeeEstimates: {
     type: GasFeeEstimateType.FeeMarket,
     low: { maxFeePerGas: '0x4077da492', maxPriorityFeePerGas: '0x3b9aca00' },
