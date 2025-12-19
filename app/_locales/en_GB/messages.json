@@ -415,7 +415,7 @@
     "message": "This is the transaction number of an account. Nonce for the first transaction is 0 and it increases in sequential order."
   },
   "advancedEIP1559ModalTitle": {
-    "message": "Advanced Network Fee"
+    "message": "Advanced network fee"
   },
   "advancedGasFeeDefaultOptIn": {
     "message": "Save these values as my default for the $1 network.",
@@ -425,7 +425,7 @@
     "message": "Advanced gas fee"
   },
   "advancedGasPriceModalTitle": {
-    "message": "Advanced Network Fee"
+    "message": "Advanced network fee"
   },
   "advancedGasPriceTitle": {
     "message": "Gas price"
@@ -2888,7 +2888,7 @@
     "description": "Label for the expiration date of a permission"
   },
   "gatorPermissionsHideDetails": {
-    "message": "Hide Details",
+    "message": "Hide details",
     "description": "Button text to hide permission details"
   },
   "gatorPermissionsInitialAllowance": {
@@ -2912,7 +2912,7 @@
     "description": "Label for the revoke button of a gator permission"
   },
   "gatorPermissionsShowDetails": {
-    "message": "Show Details",
+    "message": "Show details",
     "description": "Button text to show permission details"
   },
   "gatorPermissionsStartDate": {
@@ -7311,10 +7311,10 @@
     "message": "Staked"
   },
   "stakingDeposit": {
-    "message": "Staking Deposit"
+    "message": "Staking deposit"
   },
   "stakingWithdrawal": {
-    "message": "Staking Withdrawal"
+    "message": "Staking withdrawal"
   },
   "standardAccountLabel": {
     "message": "Standard account"
