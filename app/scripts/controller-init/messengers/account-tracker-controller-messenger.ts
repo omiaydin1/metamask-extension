@@ -15,7 +15,11 @@ import {
   TransactionControllerTransactionConfirmedEvent,
   TransactionControllerUnapprovedTransactionAddedEvent,
 } from '@metamask/transaction-controller';
-import { KeyringControllerUnlockEvent } from '@metamask/keyring-controller';
+import {
+  KeyringControllerGetStateAction,
+  KeyringControllerLockEvent,
+  KeyringControllerUnlockEvent,
+} from '@metamask/keyring-controller';
 import { RootMessenger } from '../../lib/messenger';
 import { PreferencesControllerGetStateAction } from '../../controllers/preferences-controller';
 
@@ -26,16 +30,18 @@ export type AccountTrackerControllerMessenger = ReturnType<
 type AllowedActions =
   | AccountsControllerGetSelectedAccountAction
   | AccountsControllerListAccountsAction
+  | KeyringControllerGetStateAction
   | NetworkControllerGetNetworkClientByIdAction
   | NetworkControllerGetStateAction
   | PreferencesControllerGetStateAction;
 
 type AllowedEvents =
   | AccountsControllerSelectedEvmAccountChangeEvent
-  | TransactionControllerTransactionConfirmedEvent
-  | TransactionControllerUnapprovedTransactionAddedEvent
+  | KeyringControllerLockEvent
+  | KeyringControllerUnlockEvent
   | NetworkControllerNetworkAddedEvent
-  | KeyringControllerUnlockEvent;
+  | TransactionControllerTransactionConfirmedEvent
+  | TransactionControllerUnapprovedTransactionAddedEvent;
 
 /**
  * Create a messenger restricted to the allowed actions and events of the
@@ -61,16 +67,18 @@ export function getAccountTrackerControllerMessenger(
     actions: [
       'AccountsController:getSelectedAccount',
       'AccountsController:listAccounts',
+      'KeyringController:getState',
       'NetworkController:getNetworkClientById',
       'NetworkController:getState',
       'PreferencesController:getState',
     ],
     events: [
       'AccountsController:selectedEvmAccountChange',
+      'KeyringController:lock',
+      'KeyringController:unlock',
+      'NetworkController:networkAdded',
       'TransactionController:transactionConfirmed',
       'TransactionController:unapprovedTransactionAdded',
-      'NetworkController:networkAdded',
-      'KeyringController:unlock',
     ],
   });
   return accountTrackerControllerMessenger;

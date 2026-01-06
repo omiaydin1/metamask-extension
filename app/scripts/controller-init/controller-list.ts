@@ -16,6 +16,7 @@ import { AccountsController } from '@metamask/accounts-controller';
 import {
   AccountTrackerController,
   AssetsContractController,
+  AssetsController,
   CurrencyRateController,
   DeFiPositionsController,
   MultichainAssetsController,
@@ -81,7 +82,9 @@ import { UserOperationController } from '@metamask/user-operation-controller';
 import {
   AccountActivityService,
   BackendWebSocketService,
+  BackendApiClient,
 } from '@metamask/core-backend';
+import type { DataSources } from '@metamask/assets-controllers';
 import { ClaimsController, ClaimsService } from '@metamask/claims-controller';
 import {
   ProfileMetricsController,
@@ -120,6 +123,7 @@ export type Controller =
   | AppMetadataController
   | ApprovalController
   | AppStateController
+  | AssetsController
   | AuthenticationController
   | BridgeController
   | BridgeStatusController
@@ -199,6 +203,8 @@ export type Controller =
   | WebSocketService
   | BackendWebSocketService
   | AccountActivityService
+  | BackendApiClient
+  | DataSources
   | MultichainAccountService
   | NetworkEnablementController
   | ClaimsService
@@ -218,6 +224,7 @@ export type ControllerFlatState = AccountOrderController['state'] &
   AppMetadataController['state'] &
   ApprovalController['state'] &
   AppStateController['state'] &
+  AssetsController['state'] &
   AuthenticationController['state'] &
   BridgeController['state'] &
   BridgeStatusController['state'] &
