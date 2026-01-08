@@ -69,6 +69,7 @@ import type { BrowserWithSidePanel } from '../../../../shared/types';
 import { getDeferredDeepLinkRoute } from '../../../../shared/lib/deep-links/utils';
 import {
   DeferredDeepLink,
+  DeferredDeepLinkRoute,
   DeferredDeepLinkRouteType,
 } from '../../../../shared/lib/deep-links/types';
 import WalletReadyAnimation from './wallet-ready-animation';
@@ -188,6 +189,45 @@ export default function CreationSuccessful() {
     );
   }, [navigate, t]);
 
+  const handleOnDoneNavigationWithSidepanelOpen = useCallback(
+    (deferredDeepLinkResult: DeferredDeepLinkRoute) => {
+      if (!deferredDeepLinkResult) {
+        return;
+      }
+
+      if (deferredDeepLinkResult.type === DeferredDeepLinkRouteType.Redirect) {
+        window.location.assign(deferredDeepLinkResult.url);
+      } else if (
+        deferredDeepLinkResult.type === DeferredDeepLinkRouteType.Navigate
+      ) {
+        navigate(deferredDeepLinkResult.route);
+      }
+    },
+    [navigate],
+  );
+
+  const handleOnDoneNavigation = useCallback(
+    (deferredDeepLinkResult: DeferredDeepLinkRoute) => {
+      if (deferredDeepLinkResult) {
+        if (
+          deferredDeepLinkResult.type === DeferredDeepLinkRouteType.Redirect
+        ) {
+          window.open(deferredDeepLinkResult.url, '_blank');
+          navigate(DEFAULT_ROUTE);
+        } else if (
+          deferredDeepLinkResult.type === DeferredDeepLinkRouteType.Navigate
+        ) {
+          navigate(deferredDeepLinkResult.route);
+        } else {
+          navigate(DEFAULT_ROUTE);
+        }
+      } else {
+        navigate(DEFAULT_ROUTE);
+      }
+    },
+    [navigate],
+  );
+
   const onDone = useCallback(async () => {
     if (isFromReminder) {
       navigate(isFromSettingsSecurity ? SECURITY_ROUTE : DEFAULT_ROUTE);
@@ -229,7 +269,7 @@ export default function CreationSuccessful() {
       // Just complete onboarding and redirect to home page
       if (isSidePanelSetAsDefault) {
         await dispatch(setCompletedOnboarding());
-        navigate(DEFAULT_ROUTE);
+        handleOnDoneNavigation(deferredDeepLinkResult);
         return;
       }
 
@@ -254,19 +294,7 @@ export default function CreationSuccessful() {
             // Use the sidepanel-specific action - no navigation needed, sidepanel is already open
             await dispatch(setCompletedOnboardingWithSidepanel());
 
-            if (deferredDeepLinkResult) {
-              if (
-                deferredDeepLinkResult.type ===
-                DeferredDeepLinkRouteType.Redirect
-              ) {
-                window.location.assign(deferredDeepLinkResult.url);
-              } else if (
-                deferredDeepLinkResult.type ===
-                DeferredDeepLinkRouteType.Navigate
-              ) {
-                navigate(deferredDeepLinkResult.route);
-              }
-            }
+            handleOnDoneNavigationWithSidepanelOpen(deferredDeepLinkResult);
 
             return;
           }
@@ -279,32 +307,21 @@ export default function CreationSuccessful() {
     // Fallback to regular onboarding completion
     await dispatch(setCompletedOnboarding());
 
-    if (deferredDeepLinkResult) {
-      if (deferredDeepLinkResult.type === DeferredDeepLinkRouteType.Redirect) {
-        window.open(deferredDeepLinkResult.url, '_blank');
-        navigate(DEFAULT_ROUTE);
-      } else if (
-        deferredDeepLinkResult.type === DeferredDeepLinkRouteType.Navigate
-      ) {
-        navigate(deferredDeepLinkResult.route);
-      } else {
-        navigate(DEFAULT_ROUTE);
-      }
-    } else {
-      navigate(DEFAULT_ROUTE);
-    }
+    handleOnDoneNavigation(deferredDeepLinkResult);
   }, [
-    isOnboardingCompleted,
     isFromReminder,
+    deferredDeepLink,
+    isOnboardingCompleted,
     dispatch,
     externalServicesOnboardingToggleState,
-    navigate,
-    trackEvent,
-    firstTimeFlowType,
-    isFromSettingsSecurity,
     isSidePanelEnabled,
+    navigate,
+    isFromSettingsSecurity,
+    firstTimeFlowType,
+    trackEvent,
     isSidePanelSetAsDefault,
-    deferredDeepLink,
+    handleOnDoneNavigationWithSidepanelOpen,
+    handleOnDoneNavigation,
   ]);
 
   const renderDoneButton = () => {
