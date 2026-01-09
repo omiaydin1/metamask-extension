@@ -269,7 +269,7 @@ export default function CreationSuccessful() {
       // Just complete onboarding and redirect to home page
       if (isSidePanelSetAsDefault) {
         await dispatch(setCompletedOnboarding());
-        handleOnDoneNavigation(deferredDeepLinkResult);
+        navigate(DEFAULT_ROUTE);
         return;
       }
 
