@@ -1,11 +1,12 @@
 import { strict as assert } from 'assert';
 import { Mockttp } from 'mockttp';
 import { WebElement } from 'selenium-webdriver';
+
+import { Quote } from '../../../../ui/pages/confirmations/types/send';
 import FixtureBuilder from '../../fixtures/fixture-builder';
 import { SWAPS_API_V2_BASE_URL } from '../../../../shared/constants/swaps';
 import { SMART_CONTRACTS } from '../../seeder/smart-contracts';
 import { Driver } from '../../webdriver/driver';
-import type { Quote } from '../../../../ui/ducks/send/swap-and-send-utils';
 import { SWAP_SEND_QUOTES_RESPONSE_ETH_TST } from './mocks/eth-data';
 
 export const NATIVE_TOKEN_SYMBOL = 'ETH';

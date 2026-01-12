@@ -117,16 +117,6 @@ import {
   getSelectedNetworkClientId,
   getProviderConfig,
 } from '../../shared/modules/selectors/networks';
-import {
-  computeEstimatedGasLimit,
-  initializeSendState,
-  resetSendState,
-  // NOTE: Until the send duck is typescript that this is importing a typedef
-  // that does not have an explicit export statement. lets see if it breaks the
-  // compiler
-  DraftTransaction,
-  SEND_STAGES,
-} from '../ducks/send';
 import { switchedToUnconnectedAccount } from '../ducks/alerts/unconnected-account';
 import {
   getUnconnectedAccountAlertEnabledness,
@@ -1826,7 +1816,7 @@ export function updateEditableParams(
 export function updateTransactionSendFlowHistory(
   txId: string,
   currentSendFlowHistoryLength: number,
-  sendFlowHistory: DraftTransaction['history'],
+  sendFlowHistory: { entry: string; timestamp: number }[],
 ): ThunkAction<
   Promise<TransactionMeta>,
   MetaMaskReduxState,
@@ -2011,7 +2001,7 @@ export function addTransactionAndRouteToConfirmationPage(
   txParams: TransactionParams,
   options?: {
     networkClientId: NetworkClientId;
-    sendFlowHistory?: DraftTransaction['history'];
+    sendFlowHistory?: { entry: string; timestamp: number }[];
     type?: TransactionType;
   },
 ): ThunkAction<
@@ -2135,12 +2125,9 @@ export function updateAndApproveTx(
   unknown,
   AnyAction
 > {
-  return (dispatch: MetaMaskReduxDispatch, getState) => {
+  return (dispatch: MetaMaskReduxDispatch) => {
     !dontShowLoadingIndicator &&
       dispatch(showLoadingIndication(loadingIndicatorMessage));
-
-    const getIsSendActive = () =>
-      Boolean(getState().send.stage !== SEND_STAGES.INACTIVE);
 
     return new Promise((resolve, reject) => {
       const actionId = generateActionId();
@@ -2150,10 +2137,6 @@ export function updateAndApproveTx(
         [String(txMeta.id), { txMeta, actionId }, { waitForResult: true }],
         (err) => {
           dispatch(updateTransactionParams(txMeta.id, txMeta.txParams));
-
-          if (!getIsSendActive()) {
-            dispatch(resetSendState());
-          }
 
           if (err) {
             dispatch(goHome());
@@ -2168,9 +2151,6 @@ export function updateAndApproveTx(
     })
       .then(() => forceUpdateMetamaskState(dispatch))
       .then(() => {
-        if (!getIsSendActive()) {
-          dispatch(resetSendState());
-        }
         dispatch(completedTx(txMeta.id));
         dispatch(hideLoadingIndication());
         dispatch(updateCustomNonce(''));
@@ -2473,7 +2453,6 @@ export function cancelTx(
     })
       .then(() => forceUpdateMetamaskState(dispatch))
       .then(() => {
-        dispatch(resetSendState());
         dispatch(completedTx(txMeta.id));
         dispatch(hideLoadingIndication());
         dispatch(closeCurrentNotificationWindow());
@@ -2524,7 +2503,6 @@ export function cancelTxs(
       await Promise.all(cancellations);
 
       await forceUpdateMetamaskState(dispatch);
-      dispatch(resetSendState());
 
       txIds.forEach((id) => {
         dispatch(completedTx(id));
@@ -2708,12 +2686,6 @@ export function updateMetamaskState(
         type: actionConstants.CHAIN_CHANGED,
         payload: newProviderConfig.chainId,
       });
-      // We dispatch this action to ensure that the send state stays up to date
-      // after the chain changes. This async thunk will fail gracefully in the
-      // event that we are not yet on the send flow with a draftTransaction in
-      // progress.
-
-      dispatch(initializeSendState({ chainHasChanged: true }));
     }
 
     return newState;
@@ -4211,11 +4183,6 @@ export function qrCodeDetected(
       type: actionConstants.QR_CODE_DETECTED,
       value: qrCodeData,
     });
-
-    // If on the send page, the send slice will listen for the QR_CODE_DETECTED
-    // action and update its state. Address changes need to recompute gasLimit
-    // so we fire this method so that the send page gasLimit can be recomputed
-    dispatch(computeEstimatedGasLimit());
   };
 }
 
