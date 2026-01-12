@@ -429,7 +429,7 @@ describe('MetaMask onboarding', function () {
         await onboardingCompletePage.checkPageIsLoaded();
         await onboardingCompletePage.checkWalletReadyMessageIsDisplayed();
 
-        const originalHandle = await driver.driver.getWindowHandle();
+        const originalHandle = await driver.getCurrentWindowHandle();
 
         // This click triggers deferred deep link navigation
         await onboardingCompletePage.completeOnboarding();
