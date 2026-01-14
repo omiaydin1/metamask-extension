@@ -1,7 +1,4 @@
-const {
-  readChangedAndNewFilesWithStatus,
-  getChangedAndNewFiles,
-} = require('../../test/e2e/changedFilesUtil.js');
+const { readChangedAndNewFilesWithStatus, getChangedAndNewFiles } = require('../../test/e2e/changedFilesUtil.js');
 
 /**
  * Verifies that all changed files are in the /_locales/ directory.
@@ -16,7 +13,7 @@ function validateLocalesOnlyChangedFiles() {
     process.exit(1);
   }
   const invalidFiles = changedFiles.filter(
-    (file) => !file.startsWith('app/_locales/') && !file.startsWith('.github/'),
+    (file) => !file.startsWith('app/_locales/'),
   );
   if (invalidFiles.length > 0) {
     console.error(

@@ -16,7 +16,6 @@ on:
       - stable
     paths-ignore:
       - 'app/_locales/**'
-      - '.github/**'
   merge_group:
   schedule:
     # Run the full suite "overnight," once every hour from 2:00am UTC until 5:59am UTC.
