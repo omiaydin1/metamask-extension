@@ -221,4 +221,79 @@ describe('AssetList', () => {
 
     expect(container.firstChild).toBeNull();
   });
+
+  describe('hideNfts', () => {
+    it('hides NFTs section when hideNfts is true', () => {
+      const { getAllByTestId, queryByText } = render(
+        <AssetList
+          tokens={mockTokens}
+          nfts={mockNfts}
+          allTokens={mockTokens}
+          allNfts={mockNfts}
+          hideNfts={true}
+        />,
+      );
+
+      const assetComponents = getAllByTestId('asset-component');
+      expect(assetComponents).toHaveLength(2);
+      expect(queryByText('NFTs')).not.toBeInTheDocument();
+    });
+
+    it('shows NFTs section when hideNfts is false', () => {
+      const { getAllByTestId, getByText } = render(
+        <AssetList
+          tokens={mockTokens}
+          nfts={mockNfts}
+          allTokens={mockTokens}
+          allNfts={mockNfts}
+          hideNfts={false}
+        />,
+      );
+
+      const assetComponents = getAllByTestId('asset-component');
+      expect(assetComponents).toHaveLength(3);
+      expect(getByText('NFTs')).toBeInTheDocument();
+    });
+  });
+
+  describe('onAssetSelect', () => {
+    it('calls only onAssetSelect when provided', () => {
+      const mockOnAssetSelect = jest.fn();
+      const { getAllByTestId } = render(
+        <AssetList
+          tokens={mockTokens}
+          nfts={[]}
+          allTokens={mockTokens}
+          allNfts={[]}
+          onAssetSelect={mockOnAssetSelect}
+        />,
+      );
+
+      const assetComponents = getAllByTestId('asset-component');
+      fireEvent.click(assetComponents[0]);
+
+      expect(mockOnAssetSelect).toHaveBeenCalledWith(mockTokens[0]);
+      expect(mockUpdateAsset).not.toHaveBeenCalled();
+      expect(mockGoToAmountRecipientPage).not.toHaveBeenCalled();
+      expect(mockCaptureAssetSelected).not.toHaveBeenCalled();
+    });
+
+    it('calls default handlers when onAssetSelect is not provided', () => {
+      const { getAllByTestId } = render(
+        <AssetList
+          tokens={mockTokens}
+          nfts={[]}
+          allTokens={mockTokens}
+          allNfts={[]}
+        />,
+      );
+
+      const assetComponents = getAllByTestId('asset-component');
+      fireEvent.click(assetComponents[0]);
+
+      expect(mockUpdateAsset).toHaveBeenCalledWith(mockTokens[0]);
+      expect(mockGoToAmountRecipientPage).toHaveBeenCalled();
+      expect(mockCaptureAssetSelected).toHaveBeenCalledWith(mockTokens[0]);
+    });
+  });
 });

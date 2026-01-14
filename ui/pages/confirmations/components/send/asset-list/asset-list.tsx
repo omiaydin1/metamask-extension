@@ -30,6 +30,8 @@ type AssetListProps = {
   allTokens: Asset[];
   allNfts: Asset[];
   onClearFilters?: () => void;
+  hideNfts?: boolean;
+  onAssetSelect?: (asset: Asset) => void;
 };
 
 type ListItem =
@@ -46,6 +48,8 @@ export const AssetList = ({
   allTokens,
   allNfts,
   onClearFilters,
+  hideNfts = false,
+  onAssetSelect,
 }: AssetListProps) => {
   const t = useI18nContext();
   const scrollContainerRef = useScrollContainer();
@@ -57,11 +61,16 @@ export const AssetList = ({
 
   const handleAssetClick = useCallback(
     (asset: Asset) => {
+      if (onAssetSelect) {
+        onAssetSelect(asset);
+        return;
+      }
+
       updateAsset(asset);
       goToAmountRecipientPage();
       captureAssetSelected(asset);
     },
-    [updateAsset, goToAmountRecipientPage, captureAssetSelected],
+    [updateAsset, goToAmountRecipientPage, captureAssetSelected, onAssetSelect],
   );
 
   const items: ListItem[] = [];
@@ -70,7 +79,7 @@ export const AssetList = ({
     items.push({ type: 'token', asset: token });
   });
 
-  if (nfts.length > 0) {
+  if (!hideNfts && nfts.length > 0) {
     items.push({ type: 'nft-header' });
     nfts.forEach((nft) => {
       items.push({ type: 'nft', asset: nft });

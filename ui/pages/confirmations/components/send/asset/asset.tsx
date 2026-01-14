@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 
 import {
   Display,
@@ -12,16 +12,34 @@ import { AssetFilterMethod } from '../../../context/send-metrics';
 import { AssetList } from '../asset-list';
 import { AssetFilterInput } from '../asset-filter-input';
 import { NetworkFilter } from '../network-filter';
+import { type Asset as AssetType } from '../../../types/send';
 
-export const Asset = () => {
+export type AssetProps = {
+  hideNfts?: boolean;
+  includeNoBalance?: boolean;
+  onAssetSelect?: (asset: AssetType) => void;
+  tokenFilter?: (assets: AssetType[]) => AssetType[];
+};
+
+export const Asset = ({
+  hideNfts = false,
+  includeNoBalance = false,
+  onAssetSelect,
+  tokenFilter,
+}: AssetProps = {}) => {
   const [selectedChainId, setSelectedChainId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const { addAssetFilterMethod, removeAssetFilterMethod, setAssetListSize } =
     useAssetSelectionMetrics();
 
-  const { tokens, nfts } = useSendAssets();
+  const { tokens, nfts } = useSendAssets({ includeNoBalance });
+
+  const filteredByCustomFilter = useMemo(() => {
+    return tokenFilter ? tokenFilter(tokens) : tokens;
+  }, [tokens, tokenFilter]);
+
   const { filteredTokens, filteredNfts } = useSendAssetFilter({
-    tokens,
+    tokens: filteredByCustomFilter,
     nfts,
     selectedChainId,
     searchQuery,
@@ -68,9 +86,11 @@ export const Asset = () => {
       <AssetList
         tokens={filteredTokens}
         nfts={filteredNfts}
-        allTokens={tokens}
+        allTokens={filteredByCustomFilter}
         allNfts={nfts}
         onClearFilters={handleClearFilters}
+        hideNfts={hideNfts}
+        onAssetSelect={onAssetSelect}
       />
     </Box>
   );
