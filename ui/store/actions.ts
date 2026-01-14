@@ -279,18 +279,6 @@ export function startOAuthLogin(
         ]));
         seedlessAuthSuccess = true;
       } catch (error) {
-        const errorMessage =
-          error instanceof Error ? error.message : 'Unknown error';
-
-        bufferedTrace?.({
-          name: TraceName.OnboardingOAuthSeedlessAuthenticateError,
-          op: TraceOperation.OnboardingError,
-          tags: { errorMessage },
-        });
-        bufferedEndTrace?.({
-          name: TraceName.OnboardingOAuthSeedlessAuthenticateError,
-        });
-
         trackEvent?.({
           event: MetaMetricsEventName.SocialLoginFailed,
           category: MetaMetricsEventCategory.Onboarding,
@@ -310,6 +298,13 @@ export function startOAuthLogin(
             error_category: 'seedless_auth',
           },
         });
+
+        captureException(
+          createSentryError(
+            TraceName.OnboardingOAuthSeedlessAuthenticateError,
+            error as Error,
+          ),
+        );
 
         throw error;
       } finally {
