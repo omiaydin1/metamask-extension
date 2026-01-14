@@ -72,6 +72,9 @@
   "accept": {
     "message": "स्वीकार करें"
   },
+  "acceptAndClose": {
+    "message": "स्वीकार करें और बंद करें"
+  },
   "acceptTermsOfUse": {
     "message": "मैंने $1 पढ़ लिया है और मैं सहमत हूं",
     "description": "$1 is the `terms` message"
@@ -411,12 +414,18 @@
   "advancedDetailsNonceTooltip": {
     "message": "यह किसी अकाउंट की ट्रांसेक्शन संख्या है। पहले ट्रांसेक्शन के लिए nonce 0 है और यह क्रमिक क्रम में बढ़ता है।"
   },
+  "advancedEIP1559ModalTitle": {
+    "message": "एडवांस्ड नेटवर्क फीस"
+  },
   "advancedGasFeeDefaultOptIn": {
     "message": "$1 नेटवर्क के लिए इन मूल्यों को मेरे डिफॉल्ट के रूप में सहेजें।",
     "description": "$1 is the current network name."
   },
   "advancedGasFeeModalTitle": {
     "message": "एडवांस्ड गैस फ़ीस"
+  },
+  "advancedGasPriceModalTitle": {
+    "message": "एडवांस्ड नेटवर्क फीस"
   },
   "advancedGasPriceTitle": {
     "message": "गैस प्राइस"
@@ -443,7 +452,7 @@
     "message": "एलर्ट"
   },
   "alertAccountTypeUpgradeMessage": {
-    "message": "आप अपने अकाउंट को स्मार्ट अकाउंट में अपडेट कर रहे हैं। आपके पास वही अकाउंट एड्रेस होगा और आप तेज़ ट्रांसेक्शन तथा कम नेटवर्क शुल्क का लाभ उठाएँगे। $1"
+    "message": "आप अपने अकाउंट को स्मार्ट अकाउंट में अपडेट कर रहे हैं। आप तेज़ ट्रांसेक्शन और कम नेटवर्क शुल्क अनलॉक करते हुए वही अकाउंट एड्रेस रखेंगे।$1"
   },
   "alertAccountTypeUpgradeTitle": {
     "message": "अकाउंट का प्रकार"
@@ -594,6 +603,15 @@
   },
   "allPopularNetworks": {
     "message": "सभी लोकप्रिय नेटवर्क"
+  },
+  "allTimeHigh": {
+    "message": "अब तक के सबसे ऊँचे स्तर पर"
+  },
+  "allTimeLow": {
+    "message": "अब तक के सबसे निचले स्तर पर"
+  },
+  "allTokens": {
+    "message": "सभी टोकन"
   },
   "allowAddRpc": {
     "message": "RPC जोड़ें"
@@ -946,6 +964,9 @@
   "bridgeApprovalWarningForHardware": {
     "message": "आपको ब्रिजिंग के लिए $1 $2 तक एक्सेस की अनुमति देनी होगी, और फिर $3 तक ब्रिजिंग को एप्रूव करनी होगी। इसके लिए दो अलग-अलग कन्फर्मेशन की आवश्यकता होगी।"
   },
+  "bridgeBlockExplorerLinkCopied": {
+    "message": "ब्लॉक एक्सप्लोरर लिंक कॉपी किया गया"
+  },
   "bridgeCalculatingAmount": {
     "message": "गणना की जा रही है..."
   },
@@ -1029,6 +1050,9 @@
   },
   "bridgeQuoteExpired": {
     "message": "आपका कोट करने का समय समाप्त हो गया है"
+  },
+  "bridgeSelectDestinationAccount": {
+    "message": "एक डेस्टिनेशन अकाउंट चुनें"
   },
   "bridgeSelectDifferentQuote": {
     "message": "कृपया कोई अलग कोटेशन चुनें।"
@@ -1211,6 +1235,9 @@
   },
   "chainListReturnedDifferentTickerSymbol": {
     "message": "यह टोकन सिंबल आपके द्वारा डाले गए नेटवर्क नाम या चेन ID से मैच नहीं कर रहा है। कई लोकप्रिय टोकन इसी तरह के सिंबल का उपयोग करते हैं, जिनका उपयोग स्कैमर्स आपको बदले में ज़्यादा कीमती टोकन भेजने का झांसा देने के लिए कर सकते हैं। आगे बढ़ने से पहले हर चीज़ अच्छे से वेरीफाई कर लें।"
+  },
+  "changePasswordDetailsSocial": {
+    "message": "यह पासवर्ड खो देने का मतलब है कि सभी डिवाइस पर वॉलेट तक आपकी एक्सेस भी खो जाएगी।"
   },
   "changePasswordLoading": {
     "message": "पासवर्ड बदला जा रहा है..."
@@ -1478,6 +1505,9 @@
   },
   "confirmTitleDescERC20ApproveTransaction": {
     "message": "यह साइट आपके टोकन को निकालने की अनुमति चाहती है"
+  },
+  "confirmTitleDescERC20Revocation": {
+    "message": "यह साइट आपके ERC-20 टोकन एप्रूवल को कैंसिल करने की अनुमति चाहती है।"
   },
   "confirmTitleDescPermission": {
     "message": "यह साइट आपके टोकन खर्च करने की अनुमति चाहती है।"
@@ -1787,8 +1817,20 @@
   "currentAccountNotConnected": {
     "message": "आपका चालू अकाउंट कनेक्ट नहीं है"
   },
+  "currentEstimatedBaseFee": {
+    "message": "वर्तमान: $1 GWEI"
+  },
+  "currentEstimatedPriorityFeeRange": {
+    "message": "वर्तमान: $1 - $2 GWEI"
+  },
   "currentExtension": {
     "message": "वर्तमान एक्सटेंशन पेज"
+  },
+  "currentHistoricalBaseFeeRange": {
+    "message": "12 घंटे: $1 - $2 GWEI"
+  },
+  "currentHistoricalPriorityFeeRange": {
+    "message": "12 घंटे: $1 - $2 GWEI"
   },
   "currentLanguage": {
     "message": "वर्तमान भाषा"
@@ -1865,6 +1907,9 @@
   },
   "dappSwapAdvantage": {
     "message": "MetaMask स्वैप के साथ बचत करें और कमाएँ"
+  },
+  "dappSwapAdvantageSaveOnly": {
+    "message": "MetaMask स्वैप के साथ बचत करें"
   },
   "dappSwapBenefits": {
     "message": "फेल हुए स्वैप पर नेटवर्क फीस रिफंड की गई"
@@ -1989,6 +2034,9 @@
   "deepLink_theNotificationsPage": {
     "message": "नोटिफिकेशंस पेज"
   },
+  "deepLink_theOnboardingPage": {
+    "message": "ऑनबोर्डिंग पेज"
+  },
   "deepLink_thePerpsPage": {
     "message": "पर्प्स पेज"
   },
@@ -2072,6 +2120,9 @@
   },
   "deprecatedNetworkButtonMsg": {
     "message": "समझ आ गया!"
+  },
+  "deprecatedNetworkDescription": {
+    "message": "जिस नेटवर्क से आप कनेक्ट करने का प्रयास कर रहे हैं उसे अब MetaMask सपोर्ट नहीं करता। $1"
   },
   "description": {
     "message": "जानकारी"
@@ -2467,6 +2518,9 @@
   "enterYourPasswordContinue": {
     "message": "जारी रखने के लिए पासवर्ड डालें"
   },
+  "enterYourPasswordSocialLoginFlow": {
+    "message": "MetaMask पासवर्ड टाइप करें"
+  },
   "errorCode": {
     "message": "कोड: $1",
     "description": "Displayed error code for debugging purposes. $1 is the error code"
@@ -2628,6 +2682,9 @@
   "feeDetails": {
     "message": "फ़ीस का ब्यौरा"
   },
+  "fieldRequired": {
+    "message": "$1 ज़रूरी है"
+  },
   "fileImportFail": {
     "message": "फाइल इम्पोर्ट काम नहीं कर रहा है? यहां क्लिक करें!",
     "description": "Helps user import their account from a JSON file"
@@ -2681,11 +2738,39 @@
   "forgotPasswordModalButton": {
     "message": "वॉलेट इंपोर्ट करें"
   },
+  "forgotPasswordModalButtonLink": {
+    "message": "मुझे अपना फ्रेज़ नहीं पता"
+  },
+  "forgotPasswordModalContactSupport": {
+    "message": "$1 अगर आपको मदद चाहिए।",
+    "description": "$1 is the support link"
+  },
   "forgotPasswordModalContactSupportLink": {
     "message": "सपोर्ट टीम से कॉन्टेक्ट करें"
   },
+  "forgotPasswordModalDescription1": {
+    "message": "हम आपके लिए आपका पासवर्ड रिकवर नहीं कर सकते।"
+  },
+  "forgotPasswordModalDescription2": {
+    "message": "अपने वॉलेट से जुड़ा सीक्रेट रिकवरी फ्रेज़ टाइप करके उस वॉलेट को MetaMask में वापस जोड़ें।"
+  },
   "forgotPasswordModalTitle": {
     "message": "अपना पासवर्ड भूल गए?"
+  },
+  "forgotPasswordSocialDescription": {
+    "message": "हम आपका पासवर्ड रिकवर नहीं कर सकते, लेकिन ऐसे तरीके हैं जिनसे आप अपने वॉलेट का एक्सेस वापस पा सकते हैं। अगर आपको मदद चाहिए तो $1।",
+    "description": "$1 is the support link"
+  },
+  "forgotPasswordSocialStep1": {
+    "message": "$1 अगर आप टच या फेस ID वाले डिवाइस पर लॉग इन हैं, तो वहां अपना पासवर्ड रीसेट करें।",
+    "description": "$1 is bold heading"
+  },
+  "forgotPasswordSocialStep1Biometrics": {
+    "message": "टच/फेस ID:"
+  },
+  "forgotPasswordSocialStep2": {
+    "message": "$1: अगर आपके पास सीक्रेट रिकवरी फ्रेज़ है, तो आप अपने वॉलेट को इस डिवाइस पर इंपोर्ट करने के लिए इसका इस्तेमाल कर सकते हैं।",
+    "description": "$1 is bold Secret Recovery Phrase"
   },
   "form": {
     "message": "फॉर्म"
@@ -2802,9 +2887,17 @@
     "message": "एक्सपायर होने की तारीख",
     "description": "Label for the expiration date of a permission"
   },
+  "gatorPermissionsHideDetails": {
+    "message": "विवरण छिपाएं",
+    "description": "Button text to hide permission details"
+  },
   "gatorPermissionsInitialAllowance": {
     "message": "शुरुआती भत्ता",
     "description": "Label for the initial allowance of a permission"
+  },
+  "gatorPermissionsJustification": {
+    "message": "औचित्य",
+    "description": "Label for the justification"
   },
   "gatorPermissionsMaxAllowance": {
     "message": "अधिकतम भत्ता",
@@ -2817,6 +2910,10 @@
   "gatorPermissionsRevoke": {
     "message": "रद्द करें",
     "description": "Label for the revoke button of a gator permission"
+  },
+  "gatorPermissionsShowDetails": {
+    "message": "विवरण दिखाएं",
+    "description": "Button text to show permission details"
   },
   "gatorPermissionsStartDate": {
     "message": "शुरु करने की तारीख",
@@ -3505,6 +3602,10 @@
   "loginErrorGenericTitle": {
     "message": "कुछ गलत हो गया"
   },
+  "loginErrorResetWalletDescription": {
+    "message": "अनलॉक करते समय एक समस्या आई। $1 और अपने MetaMask पासवर्ड से दोबारा लॉगिन करें।",
+    "description": "$1 is the social login method"
+  },
   "loginErrorSessionExpiredButton": {
     "message": "लॉग इन करें"
   },
@@ -4148,6 +4249,9 @@
   "noAccountsFound": {
     "message": "दी गई खोज क्वेरी के लिए कोई अकाउंट नहीं मिला"
   },
+  "noConnectionDescription": {
+    "message": "MetaMask इस साइट से कनेक्ट नहीं है। शुरू करने के लिए, साइट का कनेक्ट बटन चुनें।"
+  },
   "noConversionRateAvailable": {
     "message": "कोई भी कन्वर्शन दर उपलब्ध नहीं है"
   },
@@ -4186,6 +4290,9 @@
   },
   "noWebcamFoundTitle": {
     "message": "वेबकैम नहीं मिला"
+  },
+  "noZeroValue": {
+    "message": "$1 को 0 से ज़्यादा होना चाहिए"
   },
   "nonContractAddressAlertDesc": {
     "message": "आप कॉल डेटा ऐसे एड्रेस पर भेज रहे हैं जो कॉन्ट्रैक्ट नहीं है। इससे आप फंड खो सकते हैं। जारी रखने से पहले सुनिश्चित करें कि आप सही एड्रेस और नेटवर्क का उपयोग कर रहे हैं।"
@@ -4461,11 +4568,17 @@
   "onboardingLoginFooter": {
     "message": "जारी रखकर, मैं MetaMask की $1 और $2"
   },
+  "onboardingLoginFooterPrivacyNotice": {
+    "message": "गोपनीयता नोटिस"
+  },
   "onboardingLoginFooterTermsOfUse": {
     "message": "उपयोग की शर्तों"
   },
   "onboardingMetametricCheckboxDescriptionOne": {
     "message": "हम मूलभूत उत्पाद उपयोग संबंधी डेटा एकत्र करेंगे, जैसे सामान्य लोकेशन, क्लिक और व्यूज़। कोई अन्य जानकारी स्टोर नहीं की जाएगी।"
+  },
+  "onboardingMetametricCheckboxDescriptionOneUpdated": {
+    "message": "हम बेसिक प्रोडक्ट यूसेज डेटा इकट्ठा करेंगे। हम इस जानकारी को ऑन-चेन डेटा से जोड़ सकते हैं।"
   },
   "onboardingMetametricCheckboxDescriptionTwo": {
     "message": "हम इस डेटा का उपयोग यह जानने के लिए करेंगे कि आप हमारे मार्केटिंग कम्यूनिकेशन्स के साथ कैसे इंटरैक्ट करते हैं। हम प्रासंगिक समाचार (जैसे प्रॉडक्ट फीचर्स) साझा कर सकते हैं।"
@@ -4909,6 +5022,9 @@
   "permissions": {
     "message": "अनुमतियां"
   },
+  "permissionsPageEmptyDescription": {
+    "message": "कोई अनुमति नहीं पाई गई। जब आप किसी साइट को अनुमति देते हैं या Snap इनस्टॉल करते हैं, तो विवरण यहां दिखाई देंगे।"
+  },
   "permitSimulationChange_approve": {
     "message": "खर्च करने की लिमिट"
   },
@@ -4961,6 +5077,21 @@
   "plusXMore": {
     "message": "+ $1 और",
     "description": "$1 is a number of additional but unshown items in a list- this message will be shown in place of those items"
+  },
+  "pna25ModalBlogPostLink": {
+    "message": "ब्लॉग पोस्ट।"
+  },
+  "pna25ModalBody1": {
+    "message": "आपको बेहतर सर्विस देने के लिए, हम अपने एनालिटिक्स को अपडेट कर रहे हैं ताकि वॉलेट एड्रेस और उससे जुड़ी ऑन-चेन एक्टिविटी जैसे सार्वजनिक उपलब्ध डेटा को MetaMask में आपके द्वारा लिए गए एक्शन से जोड़ा जा सके। इससे हमें MetaMask की परफॉर्मेंस, सिक्योरिटी और फीचर्स को बेहतर बनाने में मदद मिलती है ताकि एक बेहतर, सुरक्षित वॉलेट बनाया जा सके।"
+  },
+  "pna25ModalBody2": {
+    "message": "हम गोपनीयता को गंभीरता से लेते हैं। हम इस जानकारी का इस्तेमाल एडवरटाइज़िंग के लिए नहीं करते और न ही आपका डेटा थर्ड पार्टी को बेचते हैं। आप सेटिंग्स में जाकर कभी भी ऑप्ट आउट कर सकते हैं।"
+  },
+  "pna25ModalBody3": {
+    "message": "आप हमारे लेटेस्ट में इस बारे में और पढ़ सकते हैं कि हम क्या इकट्ठा करते हैं, हम इसे कैसे सुरक्षित रखते हैं, और हम यह बदलाव क्यों कर रहे हैं"
+  },
+  "pna25ModalTitle": {
+    "message": "गोपनीयता और प्रोडक्ट अपडेट्स"
   },
   "popularNetworkAddToolTip": {
     "message": "इनमें से कुछ नेटवर्क थर्ड पार्टीज़ पर निर्भर हैं। कनेक्शन कम विश्वसनीय हो सकते हैं या गतिविधि को ट्रैक करने के लिए थर्ड पार्टीज़ को चालू कर सकते हैं।",
@@ -5233,6 +5364,9 @@
   "recipientEditAriaLabel": {
     "message": "प्राप्तकर्ता बदलें"
   },
+  "recipientPlaceholderText": {
+    "message": "एड्रेस या नाम टाइप करें या पेस्ट करें"
+  },
   "recoveryPhraseReminderBackupStart": {
     "message": "अभी बैकअप लें"
   },
@@ -5368,8 +5502,24 @@
   "resetWallet": {
     "message": "अपना वॉलेट रीसेट करें"
   },
+  "resetWalletBoldTextOne": {
+    "message": "स्थायी रुप से"
+  },
+  "resetWalletBoldTextTwo": {
+    "message": "इससे आपके वॉलेट में मौजूद एसेट्स पर कोई असर नहीं पड़ेगा।"
+  },
   "resetWalletButton": {
     "message": "हां, वॉलेट रीसेट करें"
+  },
+  "resetWalletDescriptionOne": {
+    "message": "हम आपका सीक्रेट रिकवरी फ्रेज़ रिकवर नहीं कर सकते। आप नया वॉलेट बनाने के लिए वॉलेट रीसेट कर सकते हैं और प्राइवेट कीज़ (keys) का इस्तेमाल करके अपने अकाउंट इंपोर्ट कर सकते हैं।"
+  },
+  "resetWalletDescriptionTwo": {
+    "message": "रीसेट करने से $1 इस डिवाइस पर MetaMask में सारा वॉलेट डेटा डिलीट हो जाएगा। $2",
+    "description": "$1 is the bolded text 'permanently' and $2 is the bolded text 'It will not impact the assets within your wallet.'"
+  },
+  "resetWalletTitle": {
+    "message": "आपके पास आपका सीक्रेट रिकवरी फ्रेज़ नहीं है?"
   },
   "resolutionProtocol": {
     "message": "$1 के माध्यम से एड्रेस हल किया गया",
@@ -5383,6 +5533,10 @@
   },
   "restoreUserData": {
     "message": "यूज़र डेटा रीस्टोर करें"
+  },
+  "restoreWalletDescription": {
+    "message": "अपना $1 टाइप करें। वॉलेट इंपोर्ट करके, आप इस डिवाइस से अपना मौजूदा वॉलेट डेटा मिटा देंगे। इसे पहले जैसा नहीं किया जा सकता।",
+    "description": "$1 is the Secret Recovery Phrase"
   },
   "resultPageError": {
     "message": "गड़बड़ी"
@@ -5475,6 +5629,9 @@
   "revokeSimulationDetailsDesc": {
     "message": "आप किसी की अपने अकाउंट से टोकन खर्च करने की अनुमति हटा रहे हैं।"
   },
+  "revokeTokenApprovals": {
+    "message": "टोकन एप्रूवल कैंसिल करें"
+  },
   "reward": {
     "message": "रिवॉर्ड"
   },
@@ -5529,6 +5686,12 @@
   "rewardsOnboardingIntroStepConfirm": {
     "message": "250 पॉइंट्स क्लेम करें"
   },
+  "rewardsOnboardingIntroStepConfirmLoadingEligibility": {
+    "message": "योग्यता जाँच की जा रही है..."
+  },
+  "rewardsOnboardingIntroStepConfirmLoadingRegion": {
+    "message": "क्षेत्र की जाँच की जा रही है.."
+  },
   "rewardsOnboardingIntroStepSkip": {
     "message": "अभी नहीं"
   },
@@ -5559,8 +5722,15 @@
   "rewardsOnboardingStep3Title": {
     "message": "मोबाइल पर रिवॉर्ड अनलॉक करें"
   },
+  "rewardsOnboardingStep4LegalDisclaimer": {
+    "message": "\"पॉइंट्स क्लेम करें\" पर क्लिक करके, आप हमारे $1 के लिए सहमत हो रहे हैं। हम आपको ऑटोमैटिकली रिवॉर्ड देने के लिए आपकी ऑन-चेन एक्टिविटी को ट्रैक करेंगे। $2",
+    "description": "$1 is the Terms and Privacy Notice link, $2 is the Learn more link"
+  },
   "rewardsOnboardingStep4LegalDisclaimerLearnMoreLink": {
     "message": "ज़्यादा जानें"
+  },
+  "rewardsOnboardingStep4LegalDisclaimerTermsLink": {
+    "message": "नियम और गोपनीयता सूचना"
   },
   "rewardsOnboardingStep4OptInError": {
     "message": "ऑप्ट-इन नहीं हो पाया"
@@ -5591,6 +5761,10 @@
   },
   "rewardsOnboardingStepOptIn": {
     "message": "पॉइंट्स क्लेम करें"
+  },
+  "rewardsOptInVerifyingReferralCode": {
+    "message": "रेफरल कोड वेरीफाई किया जा रहा है…",
+    "description": "Text shown while verifying a referral code during rewards opt-in"
   },
   "rewardsPointsBalance": {
     "message": "$1 पॉइंट",
@@ -5817,6 +5991,9 @@
   "selectSecretRecoveryPhrase": {
     "message": "सीक्रेट रिकवरी फ्रेज़ चुनें"
   },
+  "selectType": {
+    "message": "प्रकार को चुनें"
+  },
   "selectedAccountMismatch": {
     "message": "अलग खाता चुना गया"
   },
@@ -5914,6 +6091,10 @@
   "shieldClaimDescriptionPlaceholder": {
     "message": "घटना का संक्षिप्त सारांश दें"
   },
+  "shieldClaimDetails": {
+    "message": "आप किसी भी घटना के लिए $1 दिनों के भीतर एक ही क्लेम दर्ज कर सकते हैं। $2",
+    "description": "The $1 is the number of days and $2 is a link to the full coverage policy"
+  },
   "shieldClaimDetailsViewClaims": {
     "message": "हमारी टीम इस क्लेम की समीक्षा कर रही है। जब यह मंज़ूर हो जाएगा, तो हम आपको ईमेल से बता देंगे। पूरी कवरेज पॉलिसी देखें $1।",
     "description": "The $1 is a link to the full coverage policy"
@@ -5945,6 +6126,27 @@
   },
   "shieldClaimFileUploaderHelpText": {
     "message": "यदि आपके पास कोई अतिरिक्त प्रमाण है, तो कृपया इसे यहाँ अपलोड करें।"
+  },
+  "shieldClaimGroupActive": {
+    "message": "एक्टिव क्लेम"
+  },
+  "shieldClaimGroupCompleted": {
+    "message": "पूरे किए गए क्लेम"
+  },
+  "shieldClaimGroupNoCompletedClaims": {
+    "message": "कोई पूरे किए गए क्लेम नहीं हैं"
+  },
+  "shieldClaimGroupNoCompletedClaimsDescription": {
+    "message": "अपने पूरे किए गए क्लेम को यहां ट्रैक करें।"
+  },
+  "shieldClaimGroupNoOpenClaims": {
+    "message": "कोई खुला क्लेम नहीं है"
+  },
+  "shieldClaimGroupNoOpenClaimsDescription": {
+    "message": "अपने क्लेम का स्टेटस यहां ट्रैक करें।"
+  },
+  "shieldClaimGroupRejected": {
+    "message": "रिजेक्ट किए गए क्लेम"
   },
   "shieldClaimImpactedTxHash": {
     "message": "प्रभावित ट्रांसेक्शन हैश"
@@ -6016,6 +6218,12 @@
   "shieldClaimSubmitError": {
     "message": "क्लेम सबमिट नहीं हो पाया"
   },
+  "shieldClaimSubmitSuccess": {
+    "message": "क्लेम सबमिशन प्राप्त हुआ"
+  },
+  "shieldClaimSubmitSuccessDescription": {
+    "message": "आपका क्लेम सबमिट कर दिया गया है। हम इसे रिव्यू करेंगे और ईमेल से अपडेट देंगे।"
+  },
   "shieldClaimTransactionNotFound": {
     "message": "चेन पर ट्रांसेक्शन नहीं मिला।"
   },
@@ -6025,21 +6233,39 @@
   "shieldClaimTransactionNotSuccessful": {
     "message": "चेन पर ट्रांसेक्शन सफल नहीं हुआ।"
   },
+  "shieldClaimViewGuidelines": {
+    "message": "गाइड देखें"
+  },
   "shieldClaimWalletOwnershipValidationFailed": {
     "message": "वॉलेट ओनरशिप का सत्यापन नहीं हो पाया।"
+  },
+  "shieldClaimsListTitle": {
+    "message": "क्लेम"
   },
   "shieldClaimsNumber": {
     "message": "क्लेम #$1",
     "description": "The $1 is the claim number"
   },
+  "shieldClaimsTabHistory": {
+    "message": "क्लेम हिस्ट्री"
+  },
+  "shieldClaimsTabPending": {
+    "message": "क्लेम"
+  },
   "shieldConfirmMembership": {
     "message": "प्लान कन्फर्म करें"
+  },
+  "shieldCoverageAlertCovered": {
+    "message": "MetaMask ट्रांसेक्शन शील्ड के साथ आप $2 तक सुरक्षित हैं। $1।"
   },
   "shieldCoverageAlertHighRiskTransaction": {
     "message": "यह एक ज़्यादा खतरे वाला ट्रांसेक्शन है, इसलिए इसे MetaMask ट्रांसेक्शन शील्ड के ज़रिए सुरक्षा प्राप्त नहीं है। $1।"
   },
   "shieldCoverageAlertMessageChainNotSupported": {
     "message": "यह चेन सपोर्टेड नहीं है, इसलिए इसे MetaMask ट्रांसेक्शन शील्ड के ज़रिए सुरक्षा प्राप्त नहीं है। $1"
+  },
+  "shieldCoverageAlertMessageLearnHowCoverageWorks": {
+    "message": "देखें क्या कवर किया गया है"
   },
   "shieldCoverageAlertMessagePaused": {
     "message": "आपके MetaMask ट्रांसेक्शन शील्ड प्लान पेमेंट में कोई दिक्कत थी। कवरेज फिर से शुरू करने के लिए कृपया अपना पेमेंट का तरीका अपडेट करें।"
@@ -6070,6 +6296,9 @@
   },
   "shieldCoverageAlertMessageTokenTrustSignalWarning": {
     "message": "इस टोकन में बुरी नीयत वाले व्यवहार के स्पष्ट संकेत हैं। आगे बढ़ने पर फंड्स का नुकसान हो सकता है। $1।"
+  },
+  "shieldCoverageAlertMessageTxTypeNotSupported": {
+    "message": "इस तरह का ट्रांसेक्शन सपोर्टेड नहीं है, इसलिए इसे MetaMask ट्रांसेक्शन शील्ड के ज़रिए सुरक्षा प्राप्त नहीं है। $1"
   },
   "shieldCoverageAlertMessageUnknown": {
     "message": "इस अनुरोध को सत्यापित नहीं किया जा सकता, इसलिए इसे MetaMask ट्रांसेक्शन शील्ड के ज़रिए सुरक्षा प्राप्त नहीं है। $1।"
@@ -6106,6 +6335,9 @@
   },
   "shieldEstimatedChangesMonthlyTooltipText": {
     "message": "12 महीनों के लिए $1/महीना ऑथराइज़ करें ($2 टोटल)। आपको अभी पूरा अमाउंट नहीं देना होगा, बल्कि आपसे हर महीने बिल के हिसाब से पैसे लिए जाएंगे।"
+  },
+  "shieldFooterAgreement": {
+    "message": "जारी रखकर, मैं ट्रांसेक्शन शील्ड $1 के लिए सहमति देता/देती हूँ"
   },
   "shieldNotCovered": {
     "message": "कवर नहीं किया गया"
@@ -6164,8 +6396,18 @@
   "shieldPlanDetails3": {
     "message": "प्रायोरिटी लाइव चैट सपोर्ट के लिए 24/7 एक्सेस"
   },
+  "shieldPlanDetailsRewards": {
+    "message": "हर $2 पर $1 पॉइंट्स कमाएँ",
+    "description": "The $1 is the number of points and $2 plan interval (month or year)"
+  },
+  "shieldPlanDetailsRewardsDescription": {
+    "message": "यह ऑफ़र सिर्फ़ रिवॉर्ड सीज़न के दौरान उपलब्ध है। रिवॉर्ड के लिए साइन अप करने वाले यूज़र्स को फ़्री ट्रायल खत्म होने पर पॉइंट्स दिए जाते हैं।"
+  },
   "shieldPlanDetailsRewardsTitle": {
     "message": "पुरस्कार"
+  },
+  "shieldPlanErrorText": {
+    "message": "ट्रांसेक्शन शील्ड से कनेक्ट नहीं किया जा सका"
   },
   "shieldPlanFooterNoteMonthly": {
     "message": "हर महीने बिल बनता है, कभी भी कैंसिल करें"
@@ -6230,11 +6472,18 @@
   "shieldTxDetails2Title": {
     "message": "प्राथमिक सपोर्ट"
   },
+  "shieldTxDetails3Description": {
+    "message": "पाएँ $1 पॉइंट्स/$2",
+    "description": "The $1 is the number of points, $2 is the plan interval (month or year)"
+  },
   "shieldTxDetails3DescriptionLinkReward": {
     "message": "लिंक"
   },
   "shieldTxDetails3DescriptionSignUp": {
     "message": "साइन अप करें"
+  },
+  "shieldTxDetails3Title": {
+    "message": "रिवॉर्ड सीज़न के दौरान कमाएँ"
   },
   "shieldTxMembershipActive": {
     "message": "एक्टिव प्लान"
@@ -6758,6 +7007,18 @@
   "snapsNoInsight": {
     "message": "दिखाने के लिए कोई इनसाइट नहीं"
   },
+  "snapsPrivacyWarningFirstMessage": {
+    "message": "आप इस बात को स्वीकार करते हैं कि आपके द्वारा इंस्टॉल किया गया कोई भी Snap एक थर्ड-पार्टी सर्विस है, जब तक कि इसे अलग से न बताया गया हो, जैसा कि Consensys $1 में बताया गया है। थर्ड-पार्टी सर्विस का आपका इस्तेमाल थर्ड-पार्टी सर्विस प्रोवाइडर द्वारा तय किए गए अलग-अलग नियमों और शर्तों के तहत होता है। Consensys किसी खास व्यक्ति को किसी खास वजह से किसी भी Snap के इस्तेमाल की सलाह नहीं देता है। आप अपने जोखिम पर थर्ड-पार्टी सर्विस को एक्सेस करते हैं, उस पर भरोसा करते हैं या उसका इस्तेमाल करते हैं। थर्ड-पार्टी सर्विस के इस्तेमाल की वजह से आपको होने वाले किसी भी नुकसान के लिए Consensys की कोई भी ज़िम्मेदारी और देनदारी नहीं होगी।",
+    "description": "First part of a message in popup modal displayed when installing a snap for the first time. $1 is terms of use link."
+  },
+  "snapsPrivacyWarningSecondMessage": {
+    "message": "थर्ड पार्टी सेवाओं के साथ आप जो भी सूचना शेयर करते हैं, उसे उन थर्ड पार्टी सेवाओं द्वारा उनकी अपनी गोपनीयता नीतियों के अनुसार सीधे एकत्र की जाएगी। अधिक जानकारी के लिए कृपया उनकी गोपनीयता नीतियां देखें।",
+    "description": "Second part of a message in popup modal displayed when installing a snap for the first time."
+  },
+  "snapsPrivacyWarningThirdMessage": {
+    "message": "Consensys के पास थर्ड पार्टी सेवाओं के साथ आपके द्वारा शेयर की गई जानकारी का कोई एक्सेस नहीं है।",
+    "description": "Third part of a message in popup modal displayed when installing a snap for the first time."
+  },
   "snapsSettings": {
     "message": "Snap सेटिंग्स"
   },
@@ -7007,6 +7268,9 @@
   },
   "stakingDeposit": {
     "message": "डिपॉज़िट स्टेक करना"
+  },
+  "stakingWithdrawal": {
+    "message": "स्टेकिंग विदड्रॉवल"
   },
   "standardAccountLabel": {
     "message": "मानक अकाउंट"
@@ -7324,9 +7588,6 @@
   },
   "swapGasFeesSponsored": {
     "message": "MetaMask द्वारा भुगतान किया गया"
-  },
-  "swapGasFeesSponsoredExplanation": {
-    "message": "यह नेटवर्क फीस MetaMask देता है, इसलिए आप अपने अकाउंट में $1 के बिना भी स्वैप कर सकते हैं।"
   },
   "swapGasFeesSummary": {
     "message": "क्रिप्टो माइनरों को गैस फ़ीस का पेमेंट किया जाता है जो $1 नेटवर्क पर ट्रांसेक्शन की प्रक्रिया करते हैं। MetaMask को गैस फ़ीस से लाभ नहीं होता है।",
@@ -7885,11 +8146,29 @@
   "tronBandwidth": {
     "message": "बैंडविड्थ"
   },
+  "tronBandwidthCoverageDescriptionPlural": {
+    "message": "~$1 TRX ट्रांसफर को कवर करता है",
+    "description": "$1 is the number of TRX transfers"
+  },
+  "tronBandwidthCoverageDescriptionSingular": {
+    "message": "1 TRX ट्रांसफर को कवर करता है"
+  },
   "tronDailyResources": {
     "message": "दैनिक संसाधन"
   },
+  "tronDailyResourcesDescription": {
+    "message": "यह आपके स्टेक किए गए TRX के आधार पर आपका डेली अलाउंस है। आपको रोज़ $1 बैंडविड्थ फ्री मिलता है।",
+    "description": "$1 is the maximum bandwidth value"
+  },
   "tronEnergy": {
     "message": "ऊर्जा"
+  },
+  "tronEnergyCoverageDescriptionPlural": {
+    "message": "~$1 USDT ट्रांसफर को कवर करता है",
+    "description": "$1 is the number of USDT transfers"
+  },
+  "tronEnergyCoverageDescriptionSingular": {
+    "message": "1 USDT ट्रांसफर को कवर करता है"
   },
   "troubleConnectingToLedgerU2FOnFirefox": {
     "message": "हमें आपके Ledger को जोड़ने में समस्या आ रही है। $1",

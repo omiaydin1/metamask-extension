@@ -72,6 +72,9 @@
   "accept": {
     "message": "同意する"
   },
+  "acceptAndClose": {
+    "message": "同意して閉じる"
+  },
   "acceptTermsOfUse": {
     "message": "$1を読んで同意しました",
     "description": "$1 is the `terms` message"
@@ -411,12 +414,18 @@
   "advancedDetailsNonceTooltip": {
     "message": "これはアカウントのトランザクション番号です。最初のトランザクションのナンスは0で、順番に数字が上がります。"
   },
+  "advancedEIP1559ModalTitle": {
+    "message": "詳細なネットワーク手数料"
+  },
   "advancedGasFeeDefaultOptIn": {
     "message": "これらの値を$1ネットワークのデフォルトとして保存する",
     "description": "$1 is the current network name."
   },
   "advancedGasFeeModalTitle": {
     "message": "ガス代の高度な設定"
+  },
+  "advancedGasPriceModalTitle": {
+    "message": "詳細なネットワーク手数料"
   },
   "advancedGasPriceTitle": {
     "message": "ガス価格"
@@ -443,7 +452,7 @@
     "message": "アラート"
   },
   "alertAccountTypeUpgradeMessage": {
-    "message": "アカウントをスマートアカウントにアップデートしようとしています。アカウントアドレスはそのままで、より高速なトランザクションと低いネットワーク手数料が利用できるようになります。$1"
+    "message": "アカウントをスマートアカウントにアップデートしようとしています。アカウントアドレスは変わらずに、より高速なトランザクションと低いネットワーク手数料が利用できるようになります。$1"
   },
   "alertAccountTypeUpgradeTitle": {
     "message": "アカウントタイプ"
@@ -594,6 +603,15 @@
   },
   "allPopularNetworks": {
     "message": "すべての人気のネットワーク"
+  },
+  "allTimeHigh": {
+    "message": "最高値"
+  },
+  "allTimeLow": {
+    "message": "最安値"
+  },
+  "allTokens": {
+    "message": "すべてのトークン"
   },
   "allowAddRpc": {
     "message": "RPCを追加"
@@ -946,6 +964,9 @@
   "bridgeApprovalWarningForHardware": {
     "message": "ブリッジ用に$1 $2へのアクセスを許可し、$3へのブリッジを承認する必要があります。これには2回の承認が必要です。"
   },
+  "bridgeBlockExplorerLinkCopied": {
+    "message": "ブロックエクスプローラーのリンクをコピーしました"
+  },
   "bridgeCalculatingAmount": {
     "message": "計算中..."
   },
@@ -1029,6 +1050,9 @@
   },
   "bridgeQuoteExpired": {
     "message": "クォートがタイムアウトしました。"
+  },
+  "bridgeSelectDestinationAccount": {
+    "message": "送金先アカウントを選択します"
   },
   "bridgeSelectDifferentQuote": {
     "message": "別のクォートを選択してください。"
@@ -1211,6 +1235,9 @@
   },
   "chainListReturnedDifferentTickerSymbol": {
     "message": "このトークンシンボルは、入力されたネットワーク名またはチェーンIDと一致しません。人気のトークンの多くはシンボルが似ているため、詐欺師がそれを利用してより価値の高いトークンを送り返すように仕向ける可能性があります。続行する前にすべてを確認してください。"
+  },
+  "changePasswordDetailsSocial": {
+    "message": "このパスワードを失うと、すべてのデバイスでウォレットにアクセスできなくなります。"
   },
   "changePasswordLoading": {
     "message": "パスワードを変更中..."
@@ -1478,6 +1505,9 @@
   },
   "confirmTitleDescERC20ApproveTransaction": {
     "message": "このサイトがトークンの引き出し許可を求めています。"
+  },
+  "confirmTitleDescERC20Revocation": {
+    "message": "このサイトがERC-20トークンの承認取り消し許可を求めています。"
   },
   "confirmTitleDescPermission": {
     "message": "このサイトがトークンの使用許可を求めています。"
@@ -1787,8 +1817,20 @@
   "currentAccountNotConnected": {
     "message": "現在のアカウントは接続されていません"
   },
+  "currentEstimatedBaseFee": {
+    "message": "現在: $1 gwei"
+  },
+  "currentEstimatedPriorityFeeRange": {
+    "message": "現在: $1 - $2 gwei"
+  },
   "currentExtension": {
     "message": "現在の拡張機能ページ"
+  },
+  "currentHistoricalBaseFeeRange": {
+    "message": "12時間: $1 - $2 gwei"
+  },
+  "currentHistoricalPriorityFeeRange": {
+    "message": "12時間: $1 - $2 gwei"
   },
   "currentLanguage": {
     "message": "現在の言語"
@@ -1865,6 +1907,9 @@
   },
   "dappSwapAdvantage": {
     "message": "MetaMaskスワップで貯めて収益化"
+  },
+  "dappSwapAdvantageSaveOnly": {
+    "message": "MetaMaskスワップでお金を節約"
   },
   "dappSwapBenefits": {
     "message": "失敗したスワップのネットワーク手数料は返金されます"
@@ -1989,6 +2034,9 @@
   "deepLink_theNotificationsPage": {
     "message": "通知ページ"
   },
+  "deepLink_theOnboardingPage": {
+    "message": "オンボーディングページ"
+  },
   "deepLink_thePerpsPage": {
     "message": "パーペチュアルのページ"
   },
@@ -2072,6 +2120,9 @@
   },
   "deprecatedNetworkButtonMsg": {
     "message": "了解"
+  },
+  "deprecatedNetworkDescription": {
+    "message": "接続しようとしているネットワークは現在、MetaMaskによりサポートされていません。$1"
   },
   "description": {
     "message": "説明"
@@ -2467,6 +2518,9 @@
   "enterYourPasswordContinue": {
     "message": "先に進むにはパスワードを入力してください"
   },
+  "enterYourPasswordSocialLoginFlow": {
+    "message": "MetaMaskのパスワードを入力してください"
+  },
   "errorCode": {
     "message": "コード: $1",
     "description": "Displayed error code for debugging purposes. $1 is the error code"
@@ -2628,6 +2682,9 @@
   "feeDetails": {
     "message": "手数料の詳細"
   },
+  "fieldRequired": {
+    "message": "$1は必須項目です"
+  },
   "fileImportFail": {
     "message": "ファイルのインポートが機能していない場合、ここをクリックしてください！",
     "description": "Helps user import their account from a JSON file"
@@ -2681,11 +2738,39 @@
   "forgotPasswordModalButton": {
     "message": "ウォレットをインポート"
   },
+  "forgotPasswordModalButtonLink": {
+    "message": "フレーズが不明な場合"
+  },
+  "forgotPasswordModalContactSupport": {
+    "message": "サポートが必要な場合は、$1。",
+    "description": "$1 is the support link"
+  },
   "forgotPasswordModalContactSupportLink": {
     "message": "サポートへのお問い合わせ"
   },
+  "forgotPasswordModalDescription1": {
+    "message": "当社側ではパスワードを復元できません。"
+  },
+  "forgotPasswordModalDescription2": {
+    "message": "ウォレットに関連付けられたシークレットリカバリーフレーズを入力して、MetaMaskにウォレットを追加し直してください。"
+  },
   "forgotPasswordModalTitle": {
     "message": "パスワードをお忘れですか？"
+  },
+  "forgotPasswordSocialDescription": {
+    "message": "当社側ではパスワードを復元できませんが、ウォレットへのアクセスを回復する方法は存在します。サポートが必要な場合は、$1。",
+    "description": "$1 is the support link"
+  },
+  "forgotPasswordSocialStep1": {
+    "message": "$1Touch IDまたはFace IDが搭載されたデバイスでログインしている場合は、そこでパスワードをリセットできます。",
+    "description": "$1 is bold heading"
+  },
+  "forgotPasswordSocialStep1Biometrics": {
+    "message": "Touch/Face ID:"
+  },
+  "forgotPasswordSocialStep2": {
+    "message": "$1: シークレットリカバリーフレーズをお持ちの場合は、それを使用してこのデバイスにウォレットをインポートできます。",
+    "description": "$1 is bold Secret Recovery Phrase"
   },
   "form": {
     "message": "フォーム"
@@ -2802,9 +2887,17 @@
     "message": "有効期限日",
     "description": "Label for the expiration date of a permission"
   },
+  "gatorPermissionsHideDetails": {
+    "message": "詳細を非表示",
+    "description": "Button text to hide permission details"
+  },
   "gatorPermissionsInitialAllowance": {
     "message": "初回割当",
     "description": "Label for the initial allowance of a permission"
+  },
+  "gatorPermissionsJustification": {
+    "message": "正当性",
+    "description": "Label for the justification"
   },
   "gatorPermissionsMaxAllowance": {
     "message": "最大割当",
@@ -2817,6 +2910,10 @@
   "gatorPermissionsRevoke": {
     "message": "取り消す",
     "description": "Label for the revoke button of a gator permission"
+  },
+  "gatorPermissionsShowDetails": {
+    "message": "詳細を表示",
+    "description": "Button text to show permission details"
   },
   "gatorPermissionsStartDate": {
     "message": "開始日",
@@ -3505,6 +3602,10 @@
   "loginErrorGenericTitle": {
     "message": "問題が発生しました"
   },
+  "loginErrorResetWalletDescription": {
+    "message": "ロック解除中に問題が発生しました。$1とMetaMaskのパスワードで再ログインしてください。",
+    "description": "$1 is the social login method"
+  },
   "loginErrorSessionExpiredButton": {
     "message": "ログイン"
   },
@@ -4148,6 +4249,9 @@
   "noAccountsFound": {
     "message": "指定された検索クエリでアカウントが見つかりませんでした"
   },
+  "noConnectionDescription": {
+    "message": "MetaMaskはこのサイトに接続されていません。始めるには、サイトの「接続」ボタンを選択してください。"
+  },
   "noConversionRateAvailable": {
     "message": "利用可能な換算レートがありません"
   },
@@ -4186,6 +4290,9 @@
   },
   "noWebcamFoundTitle": {
     "message": "Webカメラが見つかりません"
+  },
+  "noZeroValue": {
+    "message": "$1は0よりも大きくする必要があります"
   },
   "nonContractAddressAlertDesc": {
     "message": "コントラクトではないアドレスにコールデータを送信しようとしています。これにより、資金が失われる可能性があります。続行する前に、正しいアドレスとネットワークを使用していることを確認してください。"
@@ -4461,11 +4568,17 @@
   "onboardingLoginFooter": {
     "message": "続行することで、MetaMaskの$1および$2に同意したものとみなされます。"
   },
+  "onboardingLoginFooterPrivacyNotice": {
+    "message": "プライバシー通知"
+  },
   "onboardingLoginFooterTermsOfUse": {
     "message": "利用規約"
   },
   "onboardingMetametricCheckboxDescriptionOne": {
     "message": "当社は、おおまかな位置情報、クリック、閲覧内容など、製品の基本的な使用状況データを収集します。他の情報は一切保管されません。"
+  },
+  "onboardingMetametricCheckboxDescriptionOneUpdated": {
+    "message": "当社は製品の基本的な使用状況データを収集します。この情報はオンチェーンデータと関連付けられる場合があります。"
   },
   "onboardingMetametricCheckboxDescriptionTwo": {
     "message": "このデータは、ユーザーによる当社のマーケティングコミュニケーションとのインタラクションを把握するために使用されます。また、関連ニュースをお伝えする場合もあります (製品の機能など)。"
@@ -4909,6 +5022,9 @@
   "permissions": {
     "message": "アクセス許可"
   },
+  "permissionsPageEmptyDescription": {
+    "message": "権限が検出されませんでした。サイトに権限を付与したり、Snapをインストールしたりした場合、その詳細がここに表示されます。"
+  },
   "permitSimulationChange_approve": {
     "message": "使用上限"
   },
@@ -4961,6 +5077,21 @@
   "plusXMore": {
     "message": "他$1件",
     "description": "$1 is a number of additional but unshown items in a list- this message will be shown in place of those items"
+  },
+  "pna25ModalBlogPostLink": {
+    "message": "ブログ記事をお読みください。"
+  },
+  "pna25ModalBody1": {
+    "message": "当社はサービス向上のため、ウォレットアドレスや関連するオンチェーンアクティビティなどの公開データをMetaMask上での行動と結びつけられるように、アナリティクス機能をアップデートしています。これにより、MetaMaskのパフォーマンス、セキュリティ、機能を改善し、ウォレットの利便性と安全性を高めることができます。"
+  },
+  "pna25ModalBody2": {
+    "message": "当社はプライバシーを重視しており、この情報を広告目的で利用したり、データを第三者に販売することはありません。「設定」からいつでもオプトアウトが可能です。"
+  },
+  "pna25ModalBody3": {
+    "message": "当社が収集する情報とそれを保護する仕組み、またこの変更を行う理由の詳細については、最新の"
+  },
+  "pna25ModalTitle": {
+    "message": "プライバシーと製品に関するアップデート"
   },
   "popularNetworkAddToolTip": {
     "message": "これらのネットワークの一部はサードパーティに依存しているため、接続の信頼性が低かったり、サードパーティによるアクティビティの追跡が可能になったりする可能性があります。",
@@ -5233,6 +5364,9 @@
   "recipientEditAriaLabel": {
     "message": "受取人を編集"
   },
+  "recipientPlaceholderText": {
+    "message": "アドレスまたは名前を入力するか、貼り付けてください"
+  },
   "recoveryPhraseReminderBackupStart": {
     "message": "今すぐバックアップ"
   },
@@ -5368,8 +5502,24 @@
   "resetWallet": {
     "message": "ウォレットをリセットする"
   },
+  "resetWalletBoldTextOne": {
+    "message": "永久的に"
+  },
+  "resetWalletBoldTextTwo": {
+    "message": "ウォレット内の資産には影響ありません。"
+  },
   "resetWalletButton": {
     "message": "はい、ウォレットをリセットします"
+  },
+  "resetWalletDescriptionOne": {
+    "message": "当社側ではシークレットリカバリーフレーズを復元できません。ユーザーはウォレットをリセットすることで、新しいウォレットを作成し、秘密鍵を使ってアカウントをインポートすることができます。"
+  },
+  "resetWalletDescriptionTwo": {
+    "message": "リセットした場合、このデバイスのMetaMask内にあるすべてのウォレットデータが$1削除されます。$2",
+    "description": "$1 is the bolded text 'permanently' and $2 is the bolded text 'It will not impact the assets within your wallet.'"
+  },
+  "resetWalletTitle": {
+    "message": "シークレットリカバリーフレーズをお持ちでないですか？"
   },
   "resolutionProtocol": {
     "message": "アドレスは$1を通じて解決されました",
@@ -5383,6 +5533,10 @@
   },
   "restoreUserData": {
     "message": "ユーザーデータの復元"
+  },
+  "restoreWalletDescription": {
+    "message": "$1を入力してください。ウォレットをインポートすると、現在のウォレットデータがこのデバイスから消去されます。この操作は元に戻せません。",
+    "description": "$1 is the Secret Recovery Phrase"
   },
   "resultPageError": {
     "message": "エラー"
@@ -5475,6 +5629,9 @@
   "revokeSimulationDetailsDesc": {
     "message": "アカウントのトークンの使用許可を取り消そうとしています。"
   },
+  "revokeTokenApprovals": {
+    "message": "トークンの承認取り消し"
+  },
   "reward": {
     "message": "報酬"
   },
@@ -5529,6 +5686,12 @@
   "rewardsOnboardingIntroStepConfirm": {
     "message": "250ポイントを請求する"
   },
+  "rewardsOnboardingIntroStepConfirmLoadingEligibility": {
+    "message": "資格の有無を確認中..."
+  },
+  "rewardsOnboardingIntroStepConfirmLoadingRegion": {
+    "message": "地域を確認中…"
+  },
   "rewardsOnboardingIntroStepSkip": {
     "message": "後で"
   },
@@ -5559,8 +5722,15 @@
   "rewardsOnboardingStep3Title": {
     "message": "モバイルでリワードをアンロック"
   },
+  "rewardsOnboardingStep4LegalDisclaimer": {
+    "message": "「ポイントを請求」をクリックすることで、当社の$1に同意したものとみなされます。当社は報酬を自動的に付与できるよう、お客様のオンチェーンアクティビティを追跡します。$2",
+    "description": "$1 is the Terms and Privacy Notice link, $2 is the Learn more link"
+  },
   "rewardsOnboardingStep4LegalDisclaimerLearnMoreLink": {
     "message": "詳細"
+  },
+  "rewardsOnboardingStep4LegalDisclaimerTermsLink": {
+    "message": "規約およびプライバシー通知"
   },
   "rewardsOnboardingStep4OptInError": {
     "message": "オプトインに失敗しました"
@@ -5591,6 +5761,10 @@
   },
   "rewardsOnboardingStepOptIn": {
     "message": "ポイントを請求する"
+  },
+  "rewardsOptInVerifyingReferralCode": {
+    "message": "紹介コードを検証中...",
+    "description": "Text shown while verifying a referral code during rewards opt-in"
   },
   "rewardsPointsBalance": {
     "message": "$1ポイント",
@@ -5817,6 +5991,9 @@
   "selectSecretRecoveryPhrase": {
     "message": "シークレットリカバリーフレーズを選択"
   },
+  "selectType": {
+    "message": "種類を選択"
+  },
   "selectedAccountMismatch": {
     "message": "別のアカウントが選択されました"
   },
@@ -5914,6 +6091,10 @@
   "shieldClaimDescriptionPlaceholder": {
     "message": "インシデントの概要を簡単にご説明ください"
   },
+  "shieldClaimDetails": {
+    "message": "補償請求は、各事案につき、発生から$1日以内に1回のみ行うことができます。$2",
+    "description": "The $1 is the number of days and $2 is a link to the full coverage policy"
+  },
   "shieldClaimDetailsViewClaims": {
     "message": "この請求は当社のチームが確認中です。承認され次第、メールでお知らせいたします。完全な保護対象ポリシーはこちら：$1。",
     "description": "The $1 is a link to the full coverage policy"
@@ -5945,6 +6126,27 @@
   },
   "shieldClaimFileUploaderHelpText": {
     "message": "追加の証拠がある場合は、こちらにアップロードしてください。"
+  },
+  "shieldClaimGroupActive": {
+    "message": "審査中の請求"
+  },
+  "shieldClaimGroupCompleted": {
+    "message": "審査が完了した請求"
+  },
+  "shieldClaimGroupNoCompletedClaims": {
+    "message": "審査が完了した請求はありません"
+  },
+  "shieldClaimGroupNoCompletedClaimsDescription": {
+    "message": "審査が完了した請求はここで確認できます。"
+  },
+  "shieldClaimGroupNoOpenClaims": {
+    "message": "受付済みの請求はありません"
+  },
+  "shieldClaimGroupNoOpenClaimsDescription": {
+    "message": "請求のステータスはここで確認できます。"
+  },
+  "shieldClaimGroupRejected": {
+    "message": "却下された請求"
   },
   "shieldClaimImpactedTxHash": {
     "message": "影響を受けたトランザクションハッシュ"
@@ -6016,6 +6218,12 @@
   "shieldClaimSubmitError": {
     "message": "請求の提出に失敗しました"
   },
+  "shieldClaimSubmitSuccess": {
+    "message": "請求を受理しました"
+  },
+  "shieldClaimSubmitSuccessDescription": {
+    "message": "請求が提出されました。内容を確認の上、メールでご連絡いたします。"
+  },
   "shieldClaimTransactionNotFound": {
     "message": "チェーン上でトランザクションが見つかりません。"
   },
@@ -6025,21 +6233,39 @@
   "shieldClaimTransactionNotSuccessful": {
     "message": "チェーン上でトランザクションがうまく行われませんでした。"
   },
+  "shieldClaimViewGuidelines": {
+    "message": "ガイドラインを表示"
+  },
   "shieldClaimWalletOwnershipValidationFailed": {
     "message": "ウォレットの所有権の検証に失敗しました。"
+  },
+  "shieldClaimsListTitle": {
+    "message": "請求"
   },
   "shieldClaimsNumber": {
     "message": "請求番号$1",
     "description": "The $1 is the claim number"
   },
+  "shieldClaimsTabHistory": {
+    "message": "請求履歴"
+  },
+  "shieldClaimsTabPending": {
+    "message": "請求"
+  },
   "shieldConfirmMembership": {
     "message": "プランを確定"
+  },
+  "shieldCoverageAlertCovered": {
+    "message": "MetaMaskトランザクションシールドで最大$2まで保護されています。$1。"
   },
   "shieldCoverageAlertHighRiskTransaction": {
     "message": "これは高リスクトランザクションであるため、MetaMaskトランザクションシールドの保護対象外です。$1。"
   },
   "shieldCoverageAlertMessageChainNotSupported": {
     "message": "このチェーンはサポートされていないため、MetaMaskトランザクションシールドの保護対象外です。$1"
+  },
+  "shieldCoverageAlertMessageLearnHowCoverageWorks": {
+    "message": "補償内容を確認"
   },
   "shieldCoverageAlertMessagePaused": {
     "message": "MetaMaskトランザクションシールドプランのお支払いに問題が発生しました。サービスを再開するには、お支払い方法を更新してください。"
@@ -6070,6 +6296,9 @@
   },
   "shieldCoverageAlertMessageTokenTrustSignalWarning": {
     "message": "このトークンには悪意のある動作の兆候が強く見られます。続行すると資金を失う可能性があります。$1。"
+  },
+  "shieldCoverageAlertMessageTxTypeNotSupported": {
+    "message": "このトランザクションタイプはサポートされていないため、MetaMaskトランザクションシールドの保護対象外です。$1"
   },
   "shieldCoverageAlertMessageUnknown": {
     "message": "このリクエストは検証できないため、MetaMaskトランザクションシールドの保護対象外です。$1。"
@@ -6106,6 +6335,9 @@
   },
   "shieldEstimatedChangesMonthlyTooltipText": {
     "message": "12か月間、毎月$1（合計$2）を承認します。一括ではなく、毎月請求されます。"
+  },
+  "shieldFooterAgreement": {
+    "message": "続行することにより、トランザクションシールド$1に同意します"
   },
   "shieldNotCovered": {
     "message": "対象外"
@@ -6164,8 +6396,18 @@
   "shieldPlanDetails3": {
     "message": "24時間年中無休で優先ライブチャットサポートにアクセス可能"
   },
+  "shieldPlanDetailsRewards": {
+    "message": "$2ごとに$1ポイント獲得",
+    "description": "The $1 is the number of points and $2 plan interval (month or year)"
+  },
+  "shieldPlanDetailsRewardsDescription": {
+    "message": "このオファーはリワードシーズン中のみご利用いただけます。ポイントは、無料トライアル終了時に、リワードに参加したユーザーに付与されます。"
+  },
   "shieldPlanDetailsRewardsTitle": {
     "message": "報酬"
+  },
+  "shieldPlanErrorText": {
+    "message": "トランザクションシールドに接続できませんでした"
   },
   "shieldPlanFooterNoteMonthly": {
     "message": "月額課金でいつでもキャンセル可能"
@@ -6230,11 +6472,18 @@
   "shieldTxDetails2Title": {
     "message": "優先サポート"
   },
+  "shieldTxDetails3Description": {
+    "message": "$1ポイント/$2をゲット",
+    "description": "The $1 is the number of points, $2 is the plan interval (month or year)"
+  },
   "shieldTxDetails3DescriptionLinkReward": {
     "message": "リンク"
   },
   "shieldTxDetails3DescriptionSignUp": {
     "message": "サインアップ"
+  },
+  "shieldTxDetails3Title": {
+    "message": "リワードシーズン中に報酬を獲得"
   },
   "shieldTxMembershipActive": {
     "message": "有効なプラン"
@@ -6758,6 +7007,18 @@
   "snapsNoInsight": {
     "message": "表示するインサイトはありません"
   },
+  "snapsPrivacyWarningFirstMessage": {
+    "message": "ユーザーは、別途特定されていない限り、インストールするSnapがすべて、Consensys$1で定義されているサードパーティサービスであることを認めたものとみなされます。サードパーティサービスの使用には、当該サードパーティサービスプロバイダーにより定められた、別の諸条件が適用されます。Consensysは、いかなる理由であっても、特定の人物によるSnapの使用を一切推奨しません。サードパーティサービスへのアクセス、依存、使用は、ユーザーの自己責任で行うものとします。Consensysは、サードパーティサービスの使用によりアカウントで発生する損失について、一切責任および賠償責任を負いません。",
+    "description": "First part of a message in popup modal displayed when installing a snap for the first time. $1 is terms of use link."
+  },
+  "snapsPrivacyWarningSecondMessage": {
+    "message": "サードパーティサービスと共有した情報は、すべて当該サードパーティサービスにより、それぞれのプライバシーポリシーに従い、直接収集されます。詳細は、当該サードパーティサービスのプライバシーポリシーをご覧ください。",
+    "description": "Second part of a message in popup modal displayed when installing a snap for the first time."
+  },
+  "snapsPrivacyWarningThirdMessage": {
+    "message": "Consensysは、ユーザーがサードパーティサービスと共有したデータに一切アクセスできません。",
+    "description": "Third part of a message in popup modal displayed when installing a snap for the first time."
+  },
   "snapsSettings": {
     "message": "Snapの設定"
   },
@@ -7007,6 +7268,9 @@
   },
   "stakingDeposit": {
     "message": "ステーキングのデポジット"
+  },
+  "stakingWithdrawal": {
+    "message": "ステーキングの引き出し"
   },
   "standardAccountLabel": {
     "message": "スタンダードアカウント"
@@ -7324,9 +7588,6 @@
   },
   "swapGasFeesSponsored": {
     "message": "MetaMaskが負担"
-  },
-  "swapGasFeesSponsoredExplanation": {
-    "message": "このネットワーク手数料はMetaMaskが負担するため、アカウントに$1がなくてもスワップできます。"
   },
   "swapGasFeesSummary": {
     "message": "ガス代は、$1ネットワークでトランザクションを処理するクリプトマイナーに支払われます。MetaMaskはガス代から利益を得ません。",
@@ -7885,11 +8146,29 @@
   "tronBandwidth": {
     "message": "帯域幅"
   },
+  "tronBandwidthCoverageDescriptionPlural": {
+    "message": "TRXの送金を$1件までカバー",
+    "description": "$1 is the number of TRX transfers"
+  },
+  "tronBandwidthCoverageDescriptionSingular": {
+    "message": "TRXの送金1件をカバー"
+  },
   "tronDailyResources": {
     "message": "1日のリソース"
   },
+  "tronDailyResourcesDescription": {
+    "message": "これは、ステーキングされたTRXに基づく1日の利用可能量です。毎日$1帯域幅を無料で利用できます。",
+    "description": "$1 is the maximum bandwidth value"
+  },
   "tronEnergy": {
     "message": "エネルギー"
+  },
+  "tronEnergyCoverageDescriptionPlural": {
+    "message": "USDTの送金を$1件までカバー",
+    "description": "$1 is the number of USDT transfers"
+  },
+  "tronEnergyCoverageDescriptionSingular": {
+    "message": "USDTの送金1件をカバー"
   },
   "troubleConnectingToLedgerU2FOnFirefox": {
     "message": "Ledgerの接続に問題が発生しました。$1",
