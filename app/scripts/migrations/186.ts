@@ -1,4 +1,3 @@
-import { cloneDeep } from 'lodash';
 import { hasProperty, isObject, getErrorMessage } from '@metamask/utils';
 import { captureException } from '../../../shared/lib/sentry';
 
@@ -11,27 +10,24 @@ export const version = 186;
 
 export async function migrate(
   originalVersionedData: VersionedData,
-): Promise<VersionedData> {
-  const versionedData = cloneDeep(originalVersionedData);
-  versionedData.meta.version = version;
-
+  changedControllers: Set<string>,
+): Promise<void> {
+  originalVersionedData.meta.version = version;
   try {
-    transformState(versionedData.data);
+    const didUpdate = transformState(originalVersionedData.data);
+    if (didUpdate) {
+      changedControllers.add('TransactionController');
+    }
   } catch (err) {
     console.error(err);
     const error = new Error(
       `Migration #${version} failed: ${getErrorMessage(err)}`,
     );
     captureException(error);
-
-    // Keep original data to avoid corrupting state
-    versionedData.data = originalVersionedData.data;
   }
-
-  return versionedData;
 }
 
-function transformState(state: Record<string, unknown>) {
+function transformState(state: Record<string, unknown>): boolean {
   //
   // -- Step 1: Validate TransactionController exists
   //
@@ -41,7 +37,7 @@ function transformState(state: Record<string, unknown>) {
         `Migration ${version}: state.TransactionController is not defined`,
       ),
     );
-    return state;
+    return false;
   }
 
   const txController = state.TransactionController;
@@ -52,7 +48,7 @@ function transformState(state: Record<string, unknown>) {
         `Migration ${version}: typeof state.TransactionController is ${typeof txController}`,
       ),
     );
-    return state;
+    return false;
   }
 
   //
@@ -62,7 +58,7 @@ function transformState(state: Record<string, unknown>) {
     console.warn(
       `Migration ${version}: state.TransactionController.transactions not found, skipping.`,
     );
-    return state;
+    return false;
   }
 
   if (!Array.isArray(txController.transactions)) {
@@ -71,7 +67,7 @@ function transformState(state: Record<string, unknown>) {
         `Migration ${version}: state.TransactionController.transactions is not an array: ${typeof txController.transactions}`,
       ),
     );
-    return state;
+    return false;
   }
 
   //
@@ -89,5 +85,5 @@ function transformState(state: Record<string, unknown>) {
     return updated;
   });
 
-  return state;
+  return true;
 }

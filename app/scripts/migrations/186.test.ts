@@ -19,8 +19,8 @@ describe(`migration #${VERSION} - remove transaction history`, () => {
       },
     };
 
-    const newState = await migrate(oldState);
-    expect(newState.meta.version).toBe(VERSION);
+    await migrate(oldState, new Set());
+    expect(oldState.meta.version).toBe(VERSION);
   });
 
   it('skips migration if TransactionController.transactions is missing', async () => {
@@ -30,14 +30,15 @@ describe(`migration #${VERSION} - remove transaction history`, () => {
         TransactionController: {},
       },
     };
+    const originalData = structuredClone(oldState.data);
 
     const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
-    const newState = await migrate(oldState);
+    await migrate(oldState, new Set());
 
     expect(warn).toHaveBeenCalledWith(
       `Migration ${VERSION}: state.TransactionController.transactions not found, skipping.`,
     );
-    expect(newState.data).toStrictEqual(oldState.data);
+    expect(oldState.data).toEqual(originalData);
   });
 
   it('removes history and sendFlowHistory from transactions', async () => {
@@ -61,7 +62,7 @@ describe(`migration #${VERSION} - remove transaction history`, () => {
       },
     };
 
-    const newState = await migrate(oldState);
+    await migrate(oldState, new Set());
     const expectedTransactions = {
       transactions: [
         {
@@ -75,7 +76,7 @@ describe(`migration #${VERSION} - remove transaction history`, () => {
       ],
     };
 
-    expect(newState.data.TransactionController).toStrictEqual(
+    expect(oldState.data.TransactionController).toStrictEqual(
       expectedTransactions,
     );
   });
@@ -90,9 +91,9 @@ describe(`migration #${VERSION} - remove transaction history`, () => {
       },
     };
 
-    const newState = await migrate(oldState);
+    await migrate(oldState, new Set());
 
-    expect(newState.data.TransactionController).toStrictEqual(
+    expect(oldState.data.TransactionController).toStrictEqual(
       oldState.data.TransactionController,
     );
   });
@@ -105,7 +106,7 @@ describe(`migration #${VERSION} - remove transaction history`, () => {
       },
     };
 
-    await migrate(oldState);
+    await migrate(oldState, new Set());
     expect(sentryCaptureExceptionMock).toHaveBeenCalled();
   });
 
@@ -117,7 +118,7 @@ describe(`migration #${VERSION} - remove transaction history`, () => {
       },
     };
 
-    await migrate(oldState);
+    await migrate(oldState, new Set());
     expect(sentryCaptureExceptionMock).toHaveBeenCalled();
   });
 });
